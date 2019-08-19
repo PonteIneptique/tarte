@@ -10,10 +10,12 @@ class Base(nn.Module):
                  pos_encoder: CategoryEncoder,
                  lemma_encoder: CategoryEncoder,
                  char_encoder: CharEncoder,
+                 output_encoder: CategoryEncoder,
                  **kwargs):
 
         self.pos_encoder: CategoryEncoder = pos_encoder
         self.lemma_encoder: CategoryEncoder = lemma_encoder
+        self.output_encoder: output_encoder = output_encoder
         self.char_encoder: CharEncoder = char_encoder
 
         super().__init__()

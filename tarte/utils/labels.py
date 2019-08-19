@@ -44,6 +44,20 @@ class CategoryEncoder:
         """
         return self.itos[category_id]
 
+    def get_pad(self):
+        """ Return the padding index"""
+        return 0
+
+    def transform(self, categories: List[str]) -> List[int]:
+        """ Adaptation required to work with LinearEncoder
+        :param categories:
+        :return:
+        """
+        return list(self.encode_group(*categories))
+
+    def inverse_transform(self):
+        pass
+
     @staticmethod
     def load(stoi: Dict[str, int]) -> "CategoryEncoder":
         """ Generates a category encoder
