@@ -1,6 +1,8 @@
 from typing import Dict, Iterable, List
 from json import dumps, loads
 
+import pie.data.reader
+
 
 class CategoryEncoder:
     DEFAULT_PADDING = "<PAD>"
@@ -57,6 +59,7 @@ class CategoryEncoder:
 
     def inverse_transform(self):
         pass
+        # Todo: Implement
 
     @staticmethod
     def load(stoi: Dict[str, int]) -> "CategoryEncoder":
@@ -81,6 +84,93 @@ class CharEncoder(CategoryEncoder):
     def decode(self, category_id: List[int]):
         return "".join([super(CharEncoder, self).decode(category_single_id) for category_single_id in category_id])
 
+
+class MultiEncoder:
+    def __init__(
+            self,
+            lemma_encoder: CategoryEncoder,
+            output_encoder: CategoryEncoder,
+            pos_encoder: CategoryEncoder,
+            char_encoder: CharEncoder
+    ):
+        self.lemma = lemma_encoder
+        self.output = output_encoder
+        self.pos = pos_encoder
+        self.char = char_encoder
+
+    def fit(self, reader: pie.data.reader):
+        # Todo: Implement
+        raise NotImplementedError
+        for idx, inp in enumerate(lines):
+            tasks = None
+            if isinstance(inp, tuple):
+                inp, tasks = inp
+
+            # input
+            self.word.add(inp)
+            self.char.add(inp)
+
+            for le in self.tasks.values():
+                le.add(tasks[le.target], inp)
+
+        self.word.compute_vocab()
+        self.char.compute_vocab()
+        for le in self.tasks.values():
+            le.compute_vocab()
+
+    def fit_reader(self, reader):
+        """
+        fit reader in a non verbose way (to warn about parsing issues)
+        """
+        return self.fit(line for (_, line) in reader.readsents(silent=False))
+
+    def transform(self, sentence_batch):
+        # Todo: INVESTIGATE !
+        """
+        Parameters
+        ===========
+        sents : list of Example's as sentence
+
+        Returns
+        ===========
+        tuple of (word, char), task_dict
+
+            - word: list of integers
+            - char: list of integers where each list represents a word at the
+                character level
+            - task_dict: Dict to corresponding integer output for each task
+        """
+        word, char, tasks_dict = [], [], defaultdict(list)
+
+        for inp in sents:
+            tasks = None
+
+            # task might not be passed
+            if isinstance(inp, tuple):
+                inp, tasks = inp
+
+            # input data
+            word.append(self.word.transform(inp))
+            for w in inp:
+                char.append(self.char.transform(w))
+
+            # task data
+            if tasks is None:
+                # during inference there is no task data (pass None)
+                continue
+
+            for le in self.tasks.values():
+                task_data = le.preprocess(tasks[le.target], inp)
+                # add data
+                if le.level == 'token':
+                    tasks_dict[le.name].append(le.transform(task_data))
+                elif le.level == 'char':
+                    for w in task_data:
+                        tasks_dict[le.name].append(le.transform(w))
+                else:
+                    raise ValueError("Wrong level {}: task {}".format(le.level, le.name))
+
+        return (word, char), tasks_dict
 
 if __name__ == "__main__":
     label_encoder = CategoryEncoder()

@@ -9,7 +9,6 @@ from pie import torch_utils, initialization
 # Internal
 from .base import Base
 from .embeddings import WordEmbedding, CharEmbedding
-from .encoder import Encoder
 from .classifier import Classifier
 
 from ..utils.labels import CategoryEncoder, CharEncoder
@@ -27,6 +26,16 @@ class TarteModule(Base):
         "init": True
     }
 
+    def get_args_and_kwargs(self):
+        """
+        Return a dictionary of {'args': tuple, 'kwargs': dict} that were used
+        to instantiate the model (excluding the label_encoder and tasks)
+        """
+        return (
+            (self.pos_encoder, self.lemma_encoder, self.char_encoder, self.output_encoder), # Args
+            self.arguments # Kwargs
+        )
+
     def __init__(self,
                  pos_encoder: CategoryEncoder,
                  lemma_encoder: CategoryEncoder,
@@ -40,25 +49,27 @@ class TarteModule(Base):
         :param char_encoder:
         :param kwargs:
         """
-        arguments = copy.deepcopy(TarteModule.DEFAULTS)
-        arguments.update(kwargs)
+        self.arguments = copy.deepcopy(TarteModule.DEFAULTS)
+        self.arguments.update(kwargs)
+
+        self.training = False
 
         # Informations
-        self.word_dropout = arguments["word_dropout"]
-        self.dropout = arguments["dropout"]
+        self.word_dropout = self.arguments["word_dropout"]
+        self.dropout = self.arguments["dropout"]
 
         # Embedding
-        self.word_embedding = WordEmbedding(lemma_encoder.size(), arguments["wemb_size"])
-        self.pos__embedding = WordEmbedding(char_encoder.size(), arguments["pemb_size"])
-        self.char_embedding = CharEmbedding(char_encoder.size(), arguments["cemb_size"])
+        self.word_embedding = WordEmbedding(lemma_encoder.size(), self.arguments["wemb_size"])
+        self.pos__embedding = WordEmbedding(char_encoder.size(), self.arguments["pemb_size"])
+        self.char_embedding = CharEmbedding(char_encoder.size(), self.arguments["cemb_size"])
 
         # Encoder
-        self.word_enc = Encoder(arguments["wemb_size"], arguments["w_enc"])
-        self.pos__enc = Encoder(arguments["pemb_size"], arguments["p_enc"])
+        self.word_enc = Encoder(self.arguments["wemb_size"], self.arguments["w_enc"])
+        self.pos__enc = Encoder(self.arguments["pemb_size"], self.arguments["p_enc"])
 
         # Compute size of decoder input
         #   "+1" is the target word
-        self.decoder_input_size = arguments["w_enc"] + arguments["p_enc"] + arguments["c_size"] + 1
+        self.decoder_input_size = self.arguments["w_enc"] + self.arguments["p_enc"] + self.arguments["c_size"] + 1
 
         # Classifier
         self.decoder = Classifier(
@@ -69,7 +80,7 @@ class TarteModule(Base):
         super(TarteModule, self).__init__(pos_encoder, lemma_encoder, char_encoder, output_encoder)
 
         # Initialize
-        if arguments["init"]:
+        if self.arguments["init"]:
             initialization.init_embeddings(self.word_embedding)
             initialization.init_embeddings(self.pos__embedding)
 
