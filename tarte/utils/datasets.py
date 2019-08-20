@@ -14,7 +14,7 @@ class Dataset(pie.data.dataset.Dataset):
             reader: pie.data.reader.Reader,
             multiencoder: MultiEncoder
     ):
-        super(Dataset, self).__init__(settings=settings, reader=reader, label_encoder=None)
+        super(Dataset, self).__init__(settings=settings, reader=reader, label_encoder=multiencoder)
 
     def pack_batch(self, batch, device=None):
         """ Finish up the batch

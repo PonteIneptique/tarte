@@ -5,13 +5,15 @@ import torch.nn.functional as F
 
 # External Packages
 from pie import torch_utils, initialization
+from pie.models import decoder
 
 # Internal
 from .base import Base
 from .embeddings import WordEmbedding, CharEmbedding
 from .classifier import Classifier
+from .encoder import DataEncoder
 
-from ..utils.labels import CategoryEncoder, CharEncoder
+from ..utils.labels import CategoryEncoder, CharEncoder, MultiEncoder
 
 
 class TarteModule(Base):
@@ -36,17 +38,9 @@ class TarteModule(Base):
             self.arguments # Kwargs
         )
 
-    def __init__(self,
-                 pos_encoder: CategoryEncoder,
-                 lemma_encoder: CategoryEncoder,
-                 char_encoder: CharEncoder,
-                 output_encoder: CategoryEncoder,
-                 **kwargs):
+    def __init__(self, multi_encoder: MultiEncoder, **kwargs):
         """
 
-        :param pos_encoder:
-        :param lemma_encoder:
-        :param char_encoder:
         :param kwargs:
         """
         self.arguments = copy.deepcopy(TarteModule.DEFAULTS)
@@ -59,25 +53,25 @@ class TarteModule(Base):
         self.dropout = self.arguments["dropout"]
 
         # Embedding
-        self.word_embedding = WordEmbedding(lemma_encoder.size(), self.arguments["wemb_size"])
-        self.pos__embedding = WordEmbedding(char_encoder.size(), self.arguments["pemb_size"])
-        self.char_embedding = CharEmbedding(char_encoder.size(), self.arguments["cemb_size"])
+        self.word_embedding = WordEmbedding(multi_encoder.lemma.size(), self.arguments["wemb_size"])
+        self.pos__embedding = WordEmbedding(multi_encoder.pos.size(), self.arguments["pemb_size"])
+        self.char_embedding = CharEmbedding(multi_encoder.char.size(), self.arguments["cemb_size"])
 
         # Encoder
-        self.word_enc = Encoder(self.arguments["wemb_size"], self.arguments["w_enc"])
-        self.pos__enc = Encoder(self.arguments["pemb_size"], self.arguments["p_enc"])
+        self.word_enc = DataEncoder(self.arguments["wemb_size"], self.arguments["w_enc"])
+        self.pos__enc = DataEncoder(self.arguments["pemb_size"], self.arguments["p_enc"])
 
         # Compute size of decoder input
         #   "+1" is the target word
         self.decoder_input_size = self.arguments["w_enc"] + self.arguments["p_enc"] + self.arguments["c_size"] + 1
 
         # Classifier
-        self.decoder = Classifier(
-            self.output_encoder,
+        self.decoder: decoder.LinearDecoder = Classifier(
+            multi_encoder.output,
             self.decoder_input_size
         )
 
-        super(TarteModule, self).__init__(pos_encoder, lemma_encoder, char_encoder, output_encoder)
+        super(TarteModule, self).__init__(multi_encoder)
 
         # Initialize
         if self.arguments["init"]:
@@ -95,7 +89,7 @@ class TarteModule(Base):
         """
         return torch.cat([target, w_encoded, p_encoded, cemb], dim=-1)
 
-    def loss(self, batch_data, targets):
+    def loss(self, batch_data):
         """
 
         :param token_class: Target token to disambiguate
@@ -104,7 +98,7 @@ class TarteModule(Base):
         :param token_chars: Characters of the form
         :param lengths: Sentence lengths
         """
-        token_class, context_lemma, context_pos, token_chars, lengths = batch_data
+        (token_class, context_lemma, context_pos, token_chars, lengths), targets = batch_data
 
         # Compute embeddings
         lem = self.word_embedding(context_lemma)
@@ -134,7 +128,7 @@ class TarteModule(Base):
         # Out
         logits = self.decoder(final_input)
 
-        return self.decoder.loss(logits, targets, lengths)
+        return self.decoder.loss(logits, targets)
 
     def predict(self, token_class, context_lemma, context_pos, token_chars, lengths):
         """

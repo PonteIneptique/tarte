@@ -1,0 +1,19 @@
+token	lemma	pos	morph	Dis
+Certes	certes	ADVgen	DEGRE=-	_
+dist	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+sui	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	1
+en	en	PRE	MORPH=empty	1
+grant	grant	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+pensez	pensé	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+vilains	vilain	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+dit	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+pieça	pieç'a	ADVgen	DEGRE=-	_
+oï	öir	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=n|CAS=r	_
+avez	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_

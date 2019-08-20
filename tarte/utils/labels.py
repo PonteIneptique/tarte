@@ -1,8 +1,9 @@
-from typing import Dict, Iterable, List
+from typing import Dict, Iterable, List, Tuple
 from json import dumps, loads
 
 import pie.data.reader
 
+from . import constants
 
 class CategoryEncoder:
     DEFAULT_PADDING = "<PAD>"
@@ -17,6 +18,9 @@ class CategoryEncoder:
             CategoryEncoder.DEFAULT_PADDING: 0,
             CategoryEncoder.DEFAULT_UNKNOWN: 1
         }
+
+    def __len__(self):
+        return self.size()
 
     def size(self):
         return len(self.itos)
@@ -89,14 +93,16 @@ class MultiEncoder:
     def __init__(
             self,
             lemma_encoder: CategoryEncoder,
+            token_encoder: CategoryEncoder,
             output_encoder: CategoryEncoder,
             pos_encoder: CategoryEncoder,
             char_encoder: CharEncoder
     ):
-        self.lemma = lemma_encoder
-        self.output = output_encoder
-        self.pos = pos_encoder
-        self.char = char_encoder
+        self.lemma: CategoryEncoder = lemma_encoder
+        self.token: CategoryEncoder = token_encoder
+        self.output: CategoryEncoder = output_encoder
+        self.pos: CategoryEncoder = pos_encoder
+        self.char: CharEncoder = char_encoder
 
     def fit(self, reader: pie.data.reader):
         # Todo: Implement
@@ -124,53 +130,74 @@ class MultiEncoder:
         """
         return self.fit(line for (_, line) in reader.readsents(silent=False))
 
-    def transform(self, sentence_batch):
+    def get_category(self, lemma, disambiguation_code):
+        return lemma+"_"+disambiguation_code
+
+    def transform(
+            self,
+            sentence_batch: List[Tuple[List[str], Dict[str, List[str]]]]
+    ) -> Tuple[
+        Tuple[List[int], List[List], List[List], List[List]],
+        List[int]
+    ]:
         # Todo: INVESTIGATE !
         """
         Parameters
         ===========
-        sents : list of Example's as sentence
+        sentence_batch : list of Example's as sentence as a list of tokens and a dict of list of tasks
+        Example:
+        sentence_batch = [
+            (["Cogito", "ergo", "sum"], {"pos": ["V", "C", "V"]})
+        ]
 
         Returns
         ===========
-        tuple of (word, char), task_dict
+        tuple of Input(input_token, context_lemma, context_pos, token_chars, lengths), disambiguated
 
             - word: list of integers
             - char: list of integers where each list represents a word at the
                 character level
             - task_dict: Dict to corresponding integer output for each task
         """
-        word, char, tasks_dict = [], [], defaultdict(list)
+        # List of sentence where each word is translated to an index
+        lemm_batch: List[List[int]] = []
+        # List of sentence where each word is translated into series of characters
+        char_batch: List[List[int]] = []
+        # List of sentence where each word is kept by its POS
+        pos__batch: List[List[int]] = []
+        # Token batch
+        toke_batch: List[int] = []
+        # Expected output
+        output_batch: List[int] = []
 
-        for inp in sents:
-            tasks = None
+        for sentence, tasks in sentence_batch:
+            # Unlike the original PIE, what we are interested here is:
+            #  - the list of lemma as input
+            #  - characters of the eye word
+            #  - Disambiguation (Dis) task that tells us when something should be used
 
-            # task might not be passed
-            if isinstance(inp, tuple):
-                inp, tasks = inp
+            # Sentence is the list of token, we technically are not interested in it that much
+            # But we are interested in lemma and POS
 
-            # input data
-            word.append(self.word.transform(inp))
-            for w in inp:
-                char.append(self.char.transform(w))
+            # ToDo: This was dealt with in the Dataset, now we need to check others
+            lem_list = self.lemma.transform(tasks[constants.lemma_task_name])
+            pos_list = self.pos.transform(tasks[constants.pos_task_name])
 
-            # task data
-            if tasks is None:
-                # during inference there is no task data (pass None)
-                continue
+            for token, disambiguation, lemma in (
+                sentence,
+                tasks[constants.disambiguation_task_name],
+                tasks[constants.lemma_task_name]
+            ):
+                if disambiguation and disambiguation.isnumeric():
+                    lemm_batch.append(lem_list)
+                    char_batch.append(self.char.encode(token))
+                    pos__batch.append(pos_list)
+                    toke_batch.append(self.token.encode(token))
+                    output_batch.append(self.output.encode(self.get_category(lemma, disambiguation)))
 
-            for le in self.tasks.values():
-                task_data = le.preprocess(tasks[le.target], inp)
-                # add data
-                if le.level == 'token':
-                    tasks_dict[le.name].append(le.transform(task_data))
-                elif le.level == 'char':
-                    for w in task_data:
-                        tasks_dict[le.name].append(le.transform(w))
-                else:
-                    raise ValueError("Wrong level {}: task {}".format(le.level, le.name))
+        # Tuple of Input(input_token, context_lemma, context_pos, token_chars), disambiguated
+        return (toke_batch, lemm_batch, pos__batch, char_batch), output_batch
 
-        return (word, char), tasks_dict
 
 if __name__ == "__main__":
     label_encoder = CategoryEncoder()

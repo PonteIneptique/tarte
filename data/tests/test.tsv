@@ -1,0 +1,1902 @@
+token	lemma	pos	morph	Dis
+unc	onque	ADVgen	DEGRE=-	_
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+test	test	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+de	de	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+coefe	coife	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+en	en	PROadv	MORPH=empty	2
+abatit	abatre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+ou	en1+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+pré	pré	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+des	de+le	PRE.DETdef	NOMB.=p|GENRE=m|CAS=r	_
+chevoux	chevel	NOMcom	NOMB.=p|GENRE=m|CAS=r	_
+du	de+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+chief	chief	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+partie	partie	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+rasé	raser	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Damedex	Damnedeu	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+garda	garder	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+que	que	CONsub	MORPH=empty	4
+en	en	PRE	MORPH=empty	1
+char	char	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+ne	ne	ADVneg	MORPH=empty	1
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+touché	tochier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+cuens	conte	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+refiert	referir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	2
+lui	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+par	par	PRE	MORPH=empty	_
+vive	vif	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+postaé	pöesté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+i	i	PROadv	MORPH=empty	2
+esma	esmer	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+.i.	un	DETndf	NOMB.=s|GENRE=m|CAS=r	_
+grant	grant	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+cop	coup	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+sor	sor	PRE	MORPH=empty	2
+le	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+heaume	heaume	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+jemé	gemé	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+voit	vëoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+le	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+cop	coup	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+que	que	PROrel	NOMB.=s|GENRE=m|CAS=r	2
+il	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=n	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+asiné	assener	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Ce	ce	PROdem	NOMB.=s|GENRE=n|CAS=r	1
+que	que	PROrel	NOMB.=s|GENRE=n|CAS=r	2
+il	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+tint	tenir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	1
+de	de	PRE	MORPH=empty	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+escu	escu	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+en	en	PRE	MORPH=empty	1
+contre	contre	ADVgen	DEGRE=-	_
+geté	gaitier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+que	que	CONsub	MORPH=empty	4
+tot	tot	PROind	NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+descovert	descovrir	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+flanc	flanc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+costé	costé	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=n|CAS=r	_
+apercoit	apercevoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+mout	mout	ADVgen	DEGRE=-	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+bien	bien	ADVgen	DEGRE=p	1
+avisié	aviser	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+retraire	retraire	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+fiert	ferir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+du	de+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+branc	brant	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+letré	letré	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	1
+
+par	par	PRE	MORPH=empty	_
+desor	desor	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+maimelle	mamele	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+grant	grant	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+cop	coup	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+doné	doner	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+blanc	blanc	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+auberc	hauberc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+desrot	desroiier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+desmaellé	desmaillier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Le	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+chaval	cheval	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+par	par	PRE	MORPH=empty	_
+desoz	desoz	ADVgen	DEGRE=-	_
+lia	liier	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	3
+tout	tot	ADVgen	DEGRE=-	_
+detranchié	detrenchier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+cuens	conte	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+apoia	apoiier	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+que	que	CONsub	MORPH=empty	4
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+cuer	cuer	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+ot	avoir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+irié	irier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Tout	tot	ADVgen	DEGRE=-	_
+i	i	PROadv	MORPH=empty	2
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+sa	son	DETpos	PERS.=3|NOMB.=s|GENRE=f|CAS=r	4
+vertu	vertu	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=r	4
+branc	brant	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+bien	bien	ADVgen	DEGRE=p	1
+boté	boter	VERppe	NOMB.=s|GENRE=m|CAS=r	1
+
+Delez	dalez	PRE	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+flanc	flanc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+senestre	senestre	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+branc	brant	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+colé	coler	VERppe	NOMB.=s|GENRE=m|CAS=r	1
+
+Duc	dusque	PRE	MORPH=empty	_
+enz	enz	ADVgen	DEGRE=-	_
+en	en	PRE	MORPH=empty	1
+mie	mi	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+l	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+eschine	eschine	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+trachie	trenchier	VERppe	NOMB.=s|GENRE=f|CAS=r	1
+et	et	CONcoo	MORPH=empty	_
+copé	coper	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+a	a	PRE	MORPH=empty	3
+poi	poi	ADVgen	DEGRE=-	_
+que	que	CONsub	MORPH=empty	4
+li	le	DETdef	NOMB.=p|GENRE=m|CAS=n	_
+boel	böel	NOMcom	NOMB.=p|GENRE=m|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+sunt	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	1
+hors	hors	ADVgen	DEGRE=-	_
+volé	voler	VERppe	NOMB.=p|GENRE=m|CAS=n	_
+
+Mes	mais	CONcoo	MORPH=empty	1
+i	il	PROimp	PERS.=0|NOMB.=s|GENRE=n|CAS=n	_
+n	ne	ADVneg	MORPH=empty	1
+en	en	PROadv	MORPH=empty	2
+i	i	PROadv	MORPH=empty	2
+ot	avoir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+nus	nul	PROind	NOMB.=s|GENRE=m|CAS=r	_
+maumis	maumetre	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+ne	ne	CONcoo	MORPH=empty	2
+emperé	emperer	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+sanc	sanc	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+a	a	PRE	MORPH=empty	3
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+foison	foison	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+ist	issir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+hors	hors	ADVgen	DEGRE=-	_
+du	de+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+costé	costé	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+
+Oez	öir	VERcjg	MODE=imp|PERS.=2|NOMB.=p	_
+de	de	PRE	MORPH=empty	_
+.Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+com	come	CONsub	MORPH=empty	1
+fut	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	1
+de	de	PRE	MORPH=empty	_
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+fierté	fierté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Contremont	contremont	ADVgen	DEGRE=-	_
+vers	vers	PRE	MORPH=empty	2
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+ciel	ciel	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+rois	roi	NOMcom	NOMB.=s|GENRE=m|CAS=n	2
+regardé	regarder	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+de	de	PRE	MORPH=empty	_
+damedex	Damnedeu	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+membre	membre	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+de	de	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+trinite	trinité	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+du	de+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+saint	saint	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+esperit	esperit	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+cors	cors	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+alumé	alumer	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+apela	apeler	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+merci	merci	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+crié	crïer	VERppe	NOMB.=s|GENRE=m|CAS=r	2
+
+Gentix	gentil	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+hons	ome	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+bonhiere	bon+ëur	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+ne	ne	ADVneg	MORPH=empty	1
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+ocire	ocire	VERinf	MORPH=empty	_
+por	por	PRE	MORPH=empty	2
+dé	Dieu	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+
+Si	si	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+en	en	PROadv	MORPH=empty	2
+iroi	aler	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+Karles	Charles	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+fort	fort	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+rois	roi	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+coroné	coroner	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+ti	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+creanc	crëanter	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+bien	bien	ADVgen	DEGRE=p	1
+de	de	PRE	MORPH=empty	_
+sor	sor	PRE	MORPH=empty	2
+me	mon	DETpos	PERS.=1|NOMB.=s|GENRE=f|CAS=r	1
+leauté	lëauté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+que	que	CONsub	MORPH=empty	4
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+tendroi	tenir	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+foi	foi	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+crestienté	crestïenté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+rendroi	rendre	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+corone	corone	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+sine	signe	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+aouré	aorer	VERppe	NOMB.=s|GENRE=m|CAS=r	2
+
+et	et	CONcoo	MORPH=empty	_
+les	le	DETdef	NOMB.=p|GENRE=f|CAS=r	_
+dives	devin	ADJqua	NOMB.=p|GENRE=f|CAS=r|DEGRE=p	1
+reliques	relique	NOMcom	NOMB.=p|GENRE=f|CAS=r	_
+dom	dont	PROrel	NOMB.=s|GENRE=f|CAS=i	_
+i	i	PROadv	MORPH=empty	2
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+tel	tel	DETind	NOMB.=s|GENRE=f|CAS=r	_
+planté	plenté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+por	por	PRE	MORPH=empty	2
+coi	coi	PROint	NOMB.=s|GENRE=n|CAS=r	2
+les	il	PROper	PERS.=3|NOMB.=p|GENRE=m|CAS=r	_
+pri	priier	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+onques	onque	ADVgen	DEGRE=-	_
+chaetif	chaitif	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+maleuré	malëuré	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+
+honte	honte	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+en	en	PROadv	MORPH=empty	2
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+venue	venir	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+soi	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	1
+de	de	PRE	MORPH=empty	_
+verité	verité	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+gentis	gentil	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+hons	ome	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+aiez	avoir	VERcjg	MODE=imp|PERS.=2|NOMB.=p	_
+de	de	PRE	MORPH=empty	_
+moi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+pitié	pitié	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Si	se	CONsub	MORPH=empty	_
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+mer	morir	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+sarrasin	Sarrasin	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+il	il	PROimp	PERS.=0|NOMB.=s|GENRE=n|CAS=n	_
+vos	vos	PROper	PERS.=2|NOMB.=p|GENRE=m|CAS=i	_
+iert	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	1
+reprové	reprover	VERppe	NOMB.=s|GENRE=n|CAS=n	_
+
+Ber	baron	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+si	se	CONsub	MORPH=empty	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+i	i	PROadv	MORPH=empty	2
+tienz	tenir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	1
+ja	ja	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+i	i	PROadv	MORPH=empty	2
+verras	vëoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=s	_
+versé	verser	VERppe	NOMB.=s|GENRE=m|CAS=r	1
+
+Quant	cant	CONsub	MORPH=empty	1
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+entent	entendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+si	si	ADVgen	DEGRE=-	_
+de	de	PRE	MORPH=empty	_
+pitié	pitié	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+ploré	plorer	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+De	de	PRE	MORPH=empty	_
+soz	soz	PRE	MORPH=empty	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+arbre	arbre	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+chouche	couchier	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+belement	belement	ADVgen	DEGRE=-	_
+et	et	CONcoo	MORPH=empty	_
+soëf	söef	ADVgen	DEGRE=-	_
+
+vaincue	veintre	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+bataille	bataille	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+champ	champ	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+afinez	afiner	VERppe	NOMB.=s|GENRE=m|CAS=n	1
+
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+prist	prendre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+rois	roi	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+mout	mout	ADVgen	DEGRE=-	_
+estoit	estre	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	1
+nafrez	navrer	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Devant	devant	PRE	MORPH=empty	_
+lui	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+choucha	couchier	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+belement	belement	ADVgen	DEGRE=-	_
+et	et	CONcoo	MORPH=empty	_
+soef	söef	ADVgen	DEGRE=-	_
+
+d	de	PRE	MORPH=empty	_
+un	un	DETndf	NOMB.=s|GENRE=m|CAS=r	_
+peu	poi	PROind	NOMB.=s|GENRE=m|CAS=r	_
+de	de	PRE	MORPH=empty	_
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=r	4
+bliaut	blïaut	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+bende	bender	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+les	le	DETdef	NOMB.=p|GENRE=m|CAS=r	_
+costez	costé	NOMcom	NOMB.=p|GENRE=m|CAS=r	_
+
+Sire	seignor	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+dist	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+por	por	PRE	MORPH=empty	2
+dex	Dieu	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+car	car	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+en	en	PROadv	MORPH=empty	2
+portez	porter	VERcjg	MODE=imp|PERS.=2|NOMB.=p	_
+
+volentiers	volentiers	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+i	i	PROadv	MORPH=empty	2
+feroi	faire	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+baptizier	batisier	VERinf	MORPH=empty	_
+et	et	CONcoo	MORPH=empty	_
+lever	lever	VERinf	MORPH=empty	_
+
+Si	se	CONsub	MORPH=empty	_
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+mer	morir	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+sarrasin	Sarrasin	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+il	il	PROimp	PERS.=0|NOMB.=s|GENRE=n|CAS=n	_
+vos	vos	PROper	PERS.=2|NOMB.=p|GENRE=m|CAS=i	_
+iert	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	1
+reprovez	reprover	VERppe	NOMB.=s|GENRE=n|CAS=n	_
+
+Certes	certes	ADVgen	DEGRE=-	_
+dist	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+sui	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	1
+en	en	PRE	MORPH=empty	1
+grant	grant	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+pensez	pensé	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+
+ja	ja	ADVgen	DEGRE=-	_
+par	par	PRE	MORPH=empty	_
+moi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+serez	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=p	1
+chargiez	chargier	VERppe	NOMB.=p|GENRE=m|CAS=n	_
+ne	ne	CONcoo	MORPH=empty	2
+remuez	remüer	VERppe	NOMB.=p|GENRE=m|CAS=n	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+sarrasins	sarrasin	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+s	soi	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	1
+esforce	esforcier	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+pres	près	ADVgen	DEGRE=-	_
+de	de	PRE	MORPH=empty	_
+lui	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+alez	aler	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+adonques	adonc	ADVgen	DEGRE=-	_
+sunt	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	1
+asis	asseoir	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+belement	belement	ADVgen	DEGRE=-	_
+lez	lez	ADVgen	DEGRE=-	_
+alez	aler	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+d	de	PRE	MORPH=empty	_
+alixandre	Alixandre	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+veis	vëoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+conte	conte	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+alez	aler	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Doucement	doucement	ADVgen	DEGRE=-	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+pria	priier	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+par	par	PRE	MORPH=empty	_
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+humilitez	umelité	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Gentis	gentil	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+quens	conte	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+por	por	PRE	MORPH=empty	2
+dex	Dieu	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+car	car	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+en	en	PROadv	MORPH=empty	2
+portez	porter	VERcjg	MODE=imp|PERS.=2|NOMB.=p	_
+
+Mout	mout	ADVgen	DEGRE=-	_
+sui	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	1
+pres	près	ADVgen	DEGRE=-	_
+de	de	PRE	MORPH=empty	_
+ma	mon	DETpos	PERS.=1|NOMB.=s|GENRE=f|CAS=r	1
+fin	fin	NOMcom	NOMB.=s|GENRE=f|CAS=r	1
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+ai	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+cuer	cuer	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+crevez	crever	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+voit	vëoir	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+ici	ici	ADVgen	DEGRE=-	_
+.ii.	deus	DETcar	NOMB.=p|GENRE=m|CAS=r	_
+destries	destrier	NOMcom	NOMB.=p|GENRE=m|CAS=r	1
+coranz	corir	VERppa	NOMB.=p|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+abrivez	abriver	VERppe	NOMB.=p|GENRE=m|CAS=r	_
+
+va	aler	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+pren	prendre	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+le	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+baucen	baucenc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+sor	sor	ADVgen	DEGRE=-	2
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+la	là	ADVgen	DEGRE=-	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+aregnie	aresner	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Si	si	ADVgen	DEGRE=-	_
+monte	monter	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+par	par	PRE	MORPH=empty	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+estriu	estrieu	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+d	de	PRE	MORPH=empty	_
+or	or	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+painturez	peinturer	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+peis	puis	ADVgen	DEGRE=-	_
+vien	venir	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+par	par	PRE	MORPH=empty	_
+davant	devant	PRE	MORPH=empty	_
+moi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+sor	sor	PRE	MORPH=empty	2
+cest	cest	DETdem	NOMB.=s|GENRE=m|CAS=r	_
+arbre	arbre	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+rame	ramé	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+
+Bien	bien	ADVgen	DEGRE=p	1
+me	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+porras	pöoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=s	_
+porter	porter	VERinf	MORPH=empty	_
+es	en1+le	PRE.DETdef	NOMB.=p|GENRE=f|CAS=r	_
+loges	loge	NOMcom	NOMB.=p|GENRE=f|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+an	en	PRE	MORPH=empty	1
+tref	tref	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+
+et	et	CONcoo	MORPH=empty	_
+si	si	ADVgen	DEGRE=-	_
+emporte	emporter	VERcjg	MODE=imp|PERS.=2|NOMB.=s	2
+plorance	plorance	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+trop	trop	ADVgen	DEGRE=-	_
+mi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+poise	peser	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+moulez	moller	VERinf	MORPH=empty	_
+
+Lors	lors	ADVgen	DEGRE=-	_
+aras	avoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=s	_
+.iiii.	catre	DETcar	NOMB.=p|GENRE=f|CAS=r	_
+espees	espee	NOMcom	NOMB.=p|GENRE=f|CAS=r	_
+onques	onque	ADVgen	DEGRE=-	_
+hons	ome	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+vit	vëoir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+tex	tel	PROind	NOMB.=p|GENRE=f|CAS=r	_
+
+Bien	bien	ADVgen	DEGRE=p	1
+ti	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+sarra	salir	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=s	2
+a	a	PRE	MORPH=empty	3
+destre	destre	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+ci	ce	DETdem	NOMB.=s|GENRE=m|CAS=r	2
+blanchet	blanchet	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+afilez	afiler	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Tant	tant	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+aide	aidier	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+que	que	CONsub	MORPH=empty	4
+soie	estre	VERcjg	MODE=sub|TEMPS=pst|PERS.=1|NOMB.=s	1
+sor	sor	PRE	MORPH=empty	2
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+arcon	arçon	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+traverserz	traverser	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Mes	mais	CONcoo	MORPH=empty	1
+si	se	CONsub	MORPH=empty	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+as	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	_
+chargie	chargier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+garde	garder	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+demorer	demorer	VERinf	MORPH=empty	_
+
+voiz	vëoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+la	là	ADVgen	DEGRE=-	_
+ce	ce	DETdem	NOMB.=s|GENRE=m|CAS=r	2
+bruillet	bruillet	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+a	a	PRE	MORPH=empty	3
+ces	cest	DETdem	NOMB.=p|GENRE=m|CAS=r	_
+arbres	arbre	NOMcom	NOMB.=p|GENRE=m|CAS=r	_
+plantez	planter	VERppe	NOMB.=p|GENRE=m|CAS=r	_
+
+La	là	ADVgen	DEGRE=-	_
+laissoi	laissier	VERcjg	MODE=ind|TEMPS=ipf|PERS.=1|NOMB.=s	_
+hue	ier	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+matin	matin	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+.l.	cincante	DETcar	NOMB.=p|GENRE=m|CAS=r	_
+m.	mil	PROcar	NOMB.=p|GENRE=m|CAS=r	1
+armez	armer	VERppe	NOMB.=p|GENRE=m|CAS=r	_
+
+Or	or	ADVgen	DEGRE=-	4
+ait	aidier	VERcjg	MODE=sub|TEMPS=pst|PERS.=3|NOMB.=s	_
+dex	Dieu	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+nos	nos	PROper	PERS.=1|NOMB.=p|GENRE=m|CAS=r	1
+frans	Franc	NOMpro	NOMB.=p|GENRE=m|CAS=r	_
+par	par	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+soe	suen	ADJpos	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+bontez	bonté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Car	car	CONcoo	MORPH=empty	_
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+voi	vëoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+coment	coment	ADVint	MORPH=empty	1
+nus	nul	PROind	NOMB.=s|GENRE=m|CAS=n	_
+en	en	PROadv	MORPH=empty	2
+puisse	pöoir	VERcjg	MODE=sub|TEMPS=pst|PERS.=3|NOMB.=s	_
+eschaper	eschaper	VERinf	MORPH=empty	_
+
+Or	or	ADVgen	DEGRE=-	4
+sont	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	1
+nostre	nostre	DETpos	PERS.=1|NOMB.=p|GENRE=m|CAS=n	_
+francois	François	NOMpro	NOMB.=p|GENRE=m|CAS=n	_
+enz	enz	ADVgen	DEGRE=-	_
+en	en	PRE	MORPH=empty	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+tor	tor	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+carree	carrer	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+sarrasin	Sarrasin	NOMpro	NOMB.=p|GENRE=m|CAS=n	_
+les	il	PROper	PERS.=3|NOMB.=p|GENRE=m|CAS=r	_
+asaillent	assalir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+pute	put	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+gent	gent	NOMcom	NOMB.=s|GENRE=f|CAS=r	1
+desvee	desver	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Mes	mais	CONcoo	MORPH=empty	1
+onques	onque	ADVgen	DEGRE=-	_
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+forfirent	forfaire	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=p	_
+une	un	DETndf	NOMB.=s|GENRE=f|CAS=r	_
+pome	pome	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+paree	paroir	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+amirant	amiral	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+apele	apeler	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+malpin	Malpin	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+d	de	PRE	MORPH=empty	_
+aigre	Aigremore	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+moree	Aigremore	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+
+N	ne	ADVneg	MORPH=empty	1
+ot	avoir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+si	si	ADVgen	DEGRE=-	_
+mestre	maistre	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+larron	larron	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+jusqu	jusque	PRE	MORPH=empty	_
+a	a	PRE	MORPH=empty	3
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+mer	mer	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+betee	beter	VERppe	NOMB.=s|GENRE=f|CAS=r	2
+
+Malpin	Malpin	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+dist	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+amirant	amiral	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+par	par	PRE	MORPH=empty	_
+ma	mon	DETpos	PERS.=1|NOMB.=s|GENRE=f|CAS=r	1
+barbe	barbe	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+mellee	mesler	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Si	si	ADVgen	DEGRE=-	_
+sa	son	DETpos	PERS.=3|NOMB.=s|GENRE=f|CAS=r	4
+ceinture	ceinture	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+avoies	avoir	VERcjg	MODE=ind|TEMPS=ipf|PERS.=2|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+flori.	florir	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+emblee	emblee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+ja	ja	ADVgen	DEGRE=-	_
+puis	puis	ADVgen	DEGRE=-	_
+francois	François	NOMpro	NOMB.=p|GENRE=m|CAS=n	_
+n	ne	ADVneg	MORPH=empty	1
+aroient	avoir	VERcjg	MODE=con|PERS.=3|NOMB.=p	_
+vers	vers	PRE	MORPH=empty	2
+nos	nos	PROper	PERS.=1|NOMB.=p|GENRE=m|CAS=i	1
+nule	nul	DETind	NOMB.=s|GENRE=f|CAS=r	_
+duree	duree	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+si	si	ADVgen	DEGRE=-	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+la	là	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+enbloies	esblöir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	_
+c	ce	PROdem	NOMB.=s|GENRE=n|CAS=n	1
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+verite	verité	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+provee	prover	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+De	de	PRE	MORPH=empty	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+or	or	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+ti	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=i	_
+donrai	doner	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+une	un	DETndf	NOMB.=s|GENRE=f|CAS=r	_
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+someree	someree	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Tant	tant	ADVgen	DEGRE=-	_
+com	come	CONsub	MORPH=empty	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+ceinture	ceinture	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+aient	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	_
+n	ne	ADVneg	MORPH=empty	1
+ert	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+tor	tor	NOMcom	NOMB.=s|GENRE=f|CAS=n	2
+afamee	afamer	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+Sire	seignor	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+ce	ce	PROdem	NOMB.=s|GENRE=n|CAS=r	1
+dist	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+lerre	larron	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+demain	demain	ADVgen	DEGRE=-	_
+ainz	ainz	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+vespree	vespree	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+aincois	ainçois	ADVgen	DEGRE=-	_
+demain	demain	ADVgen	DEGRE=-	_
+a	a	PRE	MORPH=empty	3
+l	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+aube	aube	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+que	que	CONsub	MORPH=empty	4
+pere	paroir	VERcjg	MODE=sub|TEMPS=pst|PERS.=3|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+rosee	rosee	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+
+vos	vos	PROper	PERS.=2|NOMB.=p|GENRE=m|CAS=r	_
+aure	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+ceinture	ceinture	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+a	a	PRE	MORPH=empty	3
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+dame	dame	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+livree	livrer	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Quant	cant	CONsub	MORPH=empty	1
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+entent	entendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+amirant	amiral	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+joie	joie	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+demenee	demener	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+jor	jor	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+vet	aler	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+declin	declin	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+torne	tomber	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+vespree	vespree	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+
+Tant	tant	ADVgen	DEGRE=-	_
+atendit	atendre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+lerres	larron	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+pres	près	ADVgen	DEGRE=-	_
+fu	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	1
+de	de	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+jornee	jornee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+venuz	venir	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+es	en1+le	PRE.DETdef	NOMB.=p|GENRE=m|CAS=r	_
+fossez	fossé	NOMcom	NOMB.=p|GENRE=m|CAS=r	_
+s	si	ADVgen	DEGRE=-	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+l	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+esue	issue	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+tresnoee	tresnöer	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+puis	puis	ADVgen	DEGRE=-	_
+s	soi	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	1
+en	en	PROadv	MORPH=empty	2
+vet	aler	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+tor	tor	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+si	si	ADVgen	DEGRE=-	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+plus	plus	ADVgen	DEGRE=-	_
+tost	tost	ADVgen	DEGRE=-	1
+rampee	ramper	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Que	que	CONsub	MORPH=empty	1
+escurol	escurueil	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+n	ne	ADVneg	MORPH=empty	1
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+chesne	chaisne	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+en	en	PRE	MORPH=empty	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+forest	forest	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+ramee	ramé	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+
+en	en	PRE	MORPH=empty	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+tor	tor	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+s	soi	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	1
+en	en	PROadv	MORPH=empty	2
+entra	entrer	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+caiement	chëement	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+a	a	PRE	MORPH=empty	3
+celee	celee	NOMcom	NOMB.=s|GENRE=f|CAS=r	1
+
+isnelement	isnelement	ADVgen	DEGRE=-	_
+et	et	CONcoo	MORPH=empty	_
+tost	tost	ADVgen	DEGRE=-	1
+vint	venir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+cheminee	cheminee	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+
+une	un	DETndf	NOMB.=s|GENRE=f|CAS=r	_
+chandele	chandoile	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+prise	prendre	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+feu	feu	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+alumee	alumer	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+vint	venir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+us	uis	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+de	de	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+chambre	chambre	NOMcom	NOMB.=s|GENRE=f|CAS=r	1
+si	si	ADVgen	DEGRE=-	_
+la	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+trova	trover	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+fermee	fermer	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+il	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=n	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+dit	dire	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=r	4
+charme	charme	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+tantost	tantost	ADVgen	DEGRE=-	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+deffermee	desfermer	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+Nos	nostre	DETpos	PERS.=1|NOMB.=p|GENRE=m|CAS=r	_
+francois	François	NOMpro	NOMB.=p|GENRE=m|CAS=r	_
+voit	vëoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+dormant	dormir	VERppa	NOMB.=p|GENRE=m|CAS=r	_
+en	en	PRE	MORPH=empty	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+sale	sale	NOMcom	NOMB.=s|GENRE=f|CAS=r	1
+pavee	paver	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+
+Si	si	ADVgen	DEGRE=-	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+noz	nostre	DETpos	PERS.=1|NOMB.=p|GENRE=f|CAS=r	_
+gent	gent	NOMcom	NOMB.=s|GENRE=f|CAS=r	1
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+lerre	larron	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+soduite	souduire	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+enchantee	enchanter	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+que	que	CONsub	MORPH=empty	4
+il	il	PROper	PERS.=3|NOMB.=p|GENRE=m|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+s	soi	PROper	PERS.=3|NOMB.=p|GENRE=m|CAS=r	1
+esveillassent	esveillier	VERcjg	MODE=sub|TEMPS=ipf|PERS.=3|NOMB.=p	_
+por	por	PRE	MORPH=empty	2
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+tor	tor	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+d	de	PRE	MORPH=empty	_
+or	or	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+comblee	combler	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+cuens	conte	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+Gui	Gui	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+borgoigne	Borgogne	NOMpro	NOMB.=s|GENRE=f|CAS=r	_
+a	a	PRE	MORPH=empty	3
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+chier	chiere	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+menbree	membré	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	2
+
+ert	estre	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	1
+a	a	PRE	MORPH=empty	3
+une	un	DETndf	NOMB.=s|GENRE=f|CAS=r	_
+fenestre	fenestre	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+devers	devers	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+mer	mer	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+salee	saler	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+
+por	por	PRE	MORPH=empty	2
+veoir	vëoir	VERinf	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+grant	grant	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+ost	ost	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+la	là	ADVgen	DEGRE=-	_
+ert	estre	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	1
+asemblee	assembler	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+lerres	larron	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+fist	faire	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+plus	plus	ADVgen	DEGRE=-	_
+longue	lonc	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+demoree	demoree	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+vient	venir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+lit	lit	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+floripas	Floripas	NOMpro	NOMB.=s|GENRE=f|CAS=n	_
+qu	que	PROrel	NOMB.=s|GENRE=f|CAS=n	2
+ert	estre	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	1
+plus	plus	ADVgen	DEGRE=-	_
+bele	bel	ADJqua	NOMB.=s|GENRE=f|CAS=n|DEGRE=p	1
+que	que	CONsub	MORPH=empty	1
+fee	fee	NOMcom	NOMB.=s|GENRE=f|CAS=n	1
+
+Tant	tant	ADVgen	DEGRE=-	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+quis	querre	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+ceinture	ceinture	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+que	que	CONsub	MORPH=empty	4
+il	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=n	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+avoit	avoir	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	_
+trovee	trover	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+environ	environ	PRE	MORPH=empty	_
+lui	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+la	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+ceint	ceindre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+par	par	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+bocle	bocle	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+doree	dorer	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+
+floripas	Floripas	NOMpro	NOMB.=s|GENRE=f|CAS=r	_
+regarda	regarder	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+qu	que	PROrel	NOMB.=s|GENRE=f|CAS=n	2
+ert	estre	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	1
+plus	plus	ADVgen	DEGRE=-	_
+bele	bel	ADJqua	NOMB.=s|GENRE=f|CAS=n|DEGRE=p	1
+que	que	CONsub	MORPH=empty	1
+fee	fee	NOMcom	NOMB.=s|GENRE=f|CAS=n	1
+
+O	o	INJ	MORPH=empty	2
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+voudra	voloir	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	_
+gesir	jesir	VERinf	MORPH=empty	_
+car	car	CONcoo	MORPH=empty	_
+forment	forment	ADVgen	DEGRE=-	2
+li	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=i	_
+agree	agreer	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+
+par	par	PRE	MORPH=empty	_
+les	le	DETdef	NOMB.=p|GENRE=m|CAS=r	_
+flans	flanc	NOMcom	NOMB.=p|GENRE=m|CAS=r	_
+la	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+saisit	saisir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+tote	tot	DETind	NOMB.=s|GENRE=f|CAS=r	_
+nue	nu	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	1
+sachee	sachier	VERppe	NOMB.=s|GENRE=f|CAS=r	2
+
+La	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+pucele	pucele	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+s	soi	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	1
+esveille	esveillier	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+en	en	PRE	MORPH=empty	1
+haut	haut	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+s	soi	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	1
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+escriee	escrïer	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Seinte	saint	ADJqua	NOMB.=s|GENRE=f|CAS=n|DEGRE=p	_
+marie	Marie	NOMpro	NOMB.=s|GENRE=f|CAS=n	_
+dame	dame	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+reine	röine	NOMcom	NOMB.=s|GENRE=f|CAS=n	1
+coronee	coroner	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+Ou	où	ADVint	MORPH=empty	_
+estes	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	1
+uos	vos	PROper	PERS.=2|NOMB.=p|GENRE=m|CAS=n	_
+fet	faire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+elle	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=n	_
+trop	trop	ADVgen	DEGRE=-	_
+fetes	faire	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_
+longue	lonc	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+estee	ester	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Ses	son	DETpos	PERS.=3|NOMB.=s|GENRE=f|CAS=n	4
+puceles	pucele	NOMcom	NOMB.=p|GENRE=f|CAS=n	_
+acorent	acorre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	_
+checune	chascun	PROind	NOMB.=s|GENRE=f|CAS=r	_
+eschevelee	escheveler	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Quant	cant	CONsub	MORPH=empty	1
+voient	vëoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+larron	larron	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+plus	plus	ADVgen	DEGRE=-	_
+noir	noir	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+d	de	PRE	MORPH=empty	_
+une	un	DETndf	NOMB.=s|GENRE=f|CAS=r	_
+pevree	pevree	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Tote	tot	DETind	NOMB.=s|GENRE=f|CAS=n	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+plus	plus	ADVgen	DEGRE=-	_
+hardie	hardi	ADJqua	NOMB.=s|GENRE=f|CAS=n|DEGRE=p	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+en	en	PRE	MORPH=empty	1
+fuie	fuie	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+tornee	torner	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+Li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+lerre	larron	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+floripas	Floripas	NOMpro	NOMB.=s|GENRE=f|CAS=r	_
+desoz	desoz	PRE	MORPH=empty	_
+lui	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=i	_
+enversee	enverser	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+par	par	PRE	MORPH=empty	_
+le	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+mien	mien	ADJpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+escient	escïent	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+ja	ja	ADVgen	DEGRE=-	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=r	_
+eust	avoir	VERcjg	MODE=sub|TEMPS=ipf|PERS.=3|NOMB.=s	_
+vergondee	vergonder	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Quant	cant	CONsub	MORPH=empty	1
+Guion	Gui	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+borgoigne	Borgogne	NOMpro	NOMB.=s|GENRE=f|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+noiz	noise	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+escoutee	escouter	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+a	a	PRE	MORPH=empty	3
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+chambre	chambre	NOMcom	NOMB.=s|GENRE=f|CAS=r	1
+s	soi	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	1
+en	en	PROadv	MORPH=empty	2
+vient	venir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+corant	corir	VERppa	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+randonee	randonee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+il	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=n	_
+escrie	escrïer	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+s	son	DETpos	PERS.=3|NOMB.=s|GENRE=f|CAS=r	4
+amie	ami	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+tesiez	taire	VERcjg	MODE=imp|PERS.=2|NOMB.=p	_
+vos	vos	PROper	PERS.=2|NOMB.=p|GENRE=f|CAS=r	_
+bele	bel	ADJqua	NOMB.=s|GENRE=f|CAS=n|DEGRE=p	1
+nee	naistre	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+Quant	cant	CONsub	MORPH=empty	1
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+lerres	larron	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+oit	öir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+du	de+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+lit	lit	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+saut	salir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	2
+a	a	PRE	MORPH=empty	3
+volee	volee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+dus	duc	NOMcom	NOMB.=s|GENRE=m|CAS=n	2
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+ferit	ferir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+o	o	PRE	MORPH=empty	4
+le	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+chief	chief	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+de	de	PRE	MORPH=empty	_
+l	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+espee	espee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+en	en	PRE	MORPH=empty	1
+.ii.	deus	DETcar	NOMB.=p|GENRE=f|CAS=r	_
+moitiez	moitié	NOMcom	NOMB.=p|GENRE=f|CAS=r	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+fent	fendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+ceinture	ceinture	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+copee	coper	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+La	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+chandele	chandoile	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+larron	larron	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+adonc	adonc	ADVgen	DEGRE=-	_
+anublee	enubler	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+Onc	onque	ADVgen	DEGRE=-	_
+plus	plus	ADVgen	DEGRE=-	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+enchantement	enchantement	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+n	ne	ADVneg	MORPH=empty	1
+ot	avoir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+la	là	ADVgen	DEGRE=-	_
+dedenz	dedenz	ADVgen	DEGRE=-	_
+duree	duree	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Donc	donc	CONcoo	MORPH=empty	_
+saillent	salir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	2
+sus	sus	PRE	MORPH=empty	_
+li	le	DETdef	NOMB.=p|GENRE=m|CAS=n	_
+contes	conte	NOMcom	NOMB.=p|GENRE=m|CAS=n	1
+de	de	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+terre	terre	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+sauvee	sauver	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+Gui	Gui	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+lor	il	PROper	PERS.=3|NOMB.=p|GENRE=m|CAS=i	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+chose	chose	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+de	de	PRE	MORPH=empty	_
+chief	chief	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+en	en	PRE	MORPH=empty	1
+chief	chief	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+contee	conter	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Le	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+larron	larron	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+ont	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	_
+gete	jeter	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+parmi	parmi	PRE	MORPH=empty	_
+une	un	DETndf	NOMB.=s|GENRE=f|CAS=r	_
+privee	privee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+O	o	PRE	MORPH=empty	4
+tote	tot	DETind	NOMB.=s|GENRE=f|CAS=r	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+ceinture	ceinture	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+dedenz	dedenz	PRE	MORPH=empty	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+mer	mer	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+salee	saler	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+
+et	et	CONcoo	MORPH=empty	_
+dex	Dieu	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+por	por	PRE	MORPH=empty	2
+coi	coi	PROint	NOMB.=s|GENRE=n|CAS=r	2
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+firent	faire	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=p	_
+si	si	ADVgen	DEGRE=-	_
+dure	dur	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+destinee	destinee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+James	ja+mais1	ADVgen	DEGRE=-	_
+iceste	icest	DETdem	NOMB.=s|GENRE=f|CAS=n	_
+perte	perte	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+sera	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	1
+restoree	restorer	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+perdue	perdre	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=n	_
+ceinture	defendre	NOMcom	NOMB.=s|GENRE=f|CAS=n	_
+et	et	CONcoo	MORPH=empty	_
+en	en	PRE	MORPH=empty	1
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+mer	mer	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+getee	jeter	VERppe	NOMB.=s|GENRE=f|CAS=n	_
+
+ele	il	PROper	PERS.=3|NOMB.=s|GENRE=f|CAS=n	_
+valoit	valoir	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	_
+d	de	PRE	MORPH=empty	_
+or	or	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+fin	fin	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	2
+une	un	DETndf	NOMB.=s|GENRE=f|CAS=r	_
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+tor	tor	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+rasee	raser	VERppe	NOMB.=s|GENRE=f|CAS=r	_
+
+Quant	cant	CONsub	MORPH=empty	1
+noz	nostre	DETpos	PERS.=1|NOMB.=p|GENRE=m|CAS=n	_
+francois	François	NOMpro	NOMB.=p|GENRE=m|CAS=n	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=n|CAS=r	_
+oirent	öir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=p	_
+mie	mie	ADVneg	MORPH=empty	_
+ne	ne	ADVneg	MORPH=empty	1
+lor	il	PROper	PERS.=3|NOMB.=p|GENRE=m|CAS=i	_
+agree	agreer	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+
+que	que	CONsub	MORPH=empty	4
+ou	en1+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+sanc	sanc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+de	de	PRE	MORPH=empty	_
+m	mon	DETpos	PERS.=1|NOMB.=s|GENRE=f|CAS=r	1
+espee	espee	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+porras	pöoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	_
+ton	ton	DETpos	PERS.=2|NOMB.=s|GENRE=m|CAS=n	4
+cors	cors	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+bannier	baignier	VERinf	MORPH=empty	_
+
+Quant	cant	CONsub	MORPH=empty	1
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+entent	entendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+ne	ne	ADVneg	MORPH=empty	1
+se	soi	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	1
+veust	voloir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+corocier	corrocier	VERinf	MORPH=empty	_
+
+par	par	PRE	MORPH=empty	_
+de	de	PRE	MORPH=empty	_
+sor	sor	PRE	MORPH=empty	2
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=r	4
+mantel	mantel	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+mist	metre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	2
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=r	4
+cors	cors	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+a	a	PRE	MORPH=empty	3
+couchier	couchier	VERinf	MORPH=empty	_
+
+Sor	sor	PRE	MORPH=empty	2
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=r	4
+escu	escu	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+estoit	estre	VERcjg	MODE=ind|TEMPS=ipf|PERS.=3|NOMB.=s	1
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+acoudez	acoter	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Tant	tant	ADVgen	DEGRE=-	_
+fut	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	1
+fiers	fier	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+et	et	CONcoo	MORPH=empty	_
+nobiles	nobíle	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+et	et	CONcoo	MORPH=empty	_
+de	de	PRE	MORPH=empty	_
+grant	grant	ADJqua	NOMB.=s|GENRE=f|CAS=r|DEGRE=p	_
+cruautez	crüauté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+N	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+prisa	prisier	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+ii.	deus	DETcar	NOMB.=p|GENRE=m|CAS=r	_
+deniers	denier	NOMcom	NOMB.=p|GENRE=m|CAS=r	_
+monaiez	monëer	VERppe	NOMB.=p|GENRE=m|CAS=r	_
+
+Vasal	vassal	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+dit	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+si	si	ADVgen	DEGRE=-	_
+t	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+aist	aidier	VERcjg	MODE=sub|TEMPS=pst|PERS.=3|NOMB.=s	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+ton	ton	ADJpos	PERS.=2|NOMB.=s|GENRE=m|CAS=n	4
+dexz	Dieu	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+
+C	ce	PROdem	NOMB.=s|GENRE=n|CAS=r	1
+a	a	PRE	MORPH=empty	3
+moi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+di	dire	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+ies	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	1
+et	et	CONcoo	MORPH=empty	_
+de	de	PRE	MORPH=empty	_
+quel	quel	DETrel	NOMB.=s|GENRE=m|CAS=r	1
+parentez	parenté	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+Respont	respondre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+ja	ja	ADVgen	DEGRE=-	_
+n	ne	ADVneg	MORPH=empty	1
+orrez	öir	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=p	_
+veritez	verité	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+L	le	DETdef	NOMB.=s|GENRE=n|CAS=n	_
+en	on	PROind	NOMB.=s|GENRE=n|CAS=n	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+apele	apeler	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+garin	Garin	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+de	de	PRE	MORPH=empty	_
+peregorz	Pieregort	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+fu	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=1|NOMB.=s	1
+nez	naistre	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+fiuz	fil	NOMcom	NOMB.=s|GENRE=m|CAS=n	2
+a	a	PRE	MORPH=empty	3
+.i.	un	DETndf	NOMB.=s|GENRE=m|CAS=r	_
+vavasor	vavassor	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+ot	avoir	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+non	nom	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+jocere	Jocere	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+autre	autre	ADJind	NOMB.=s|GENRE=m|CAS=r	_
+jor	jor	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+fui	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=1|NOMB.=s	1
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+primes	prim	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+de	de	PRE	MORPH=empty	_
+novel	novel	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+adobez	adober	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+si	si	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+adoba	adober	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	_
+Karles	Charles	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+fort	fort	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+rois	roi	NOMcom	NOMB.=s|GENRE=m|CAS=n	2
+coronez	coroner	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+anvoie	envoiier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+toi	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=i	_
+asez	assez	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+en	en	PROadv	MORPH=empty	2
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+priez	priier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+por	por	PRE	MORPH=empty	2
+desrenier	desresner	VERinf	MORPH=empty	_
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=r	4
+droit	droit	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+se	si	ADVgen	DEGRE=-	_
+ici	ici	ADVgen	DEGRE=-	_
+envoiez	envoiier	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+ferroi	faire	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+bataille	bataille	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+si	se	CONsub	MORPH=empty	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+ies	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	1
+si	si	ADVgen	DEGRE=-	_
+ossez	oser	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Or	or	ADVgen	DEGRE=-	4
+monte	monter	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+inellement	isnelement	ADVgen	DEGRE=-	_
+que	que	CONsub	MORPH=empty	4
+plus	plus	ADVgen	DEGRE=-	_
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+demoreiz	demorer	VERcjg	MODE=imp|PERS.=2|NOMB.=p	_
+
+Quant	cant	CONsub	MORPH=empty	1
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+entent	entendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+si	si	ADVgen	DEGRE=-	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+.i.	un	DETndf	NOMB.=s|GENRE=m|CAS=r	_
+ris	ris	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+jegez	jugier	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Garin	Garin	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+car	car	ADVgen	DEGRE=-	_
+mi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+di	dire	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+ore	or	ADVgen	DEGRE=-	4
+garde	garder	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+ne	ne	ADVneg	MORPH=empty	1
+mi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+celer	celer	VERinf	MORPH=empty	1
+
+por	por	PRE	MORPH=empty	2
+quoi	coi	PROint	NOMB.=s|GENRE=n|CAS=r	2
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+venu	venir	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+Rollant	Rollant	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+adurez	aduré	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+
+Ou	o	CONcoo	MORPH=empty	3
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+cuens	conte	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+tant	tant	ADVgen	DEGRE=-	_
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+redotez	redoter	VERppe	NOMB.=s|GENRE=m|CAS=n	1
+
+Berart	Berart	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+mondidier	Mondidier	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+ou	o	CONcoo	MORPH=empty	3
+ogier	Ogier	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+alosez	aloser	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+
+par	par	PRE	MORPH=empty	_
+dex	Dieu	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+dit	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+car	car	CONcoo	MORPH=empty	_
+i	il	PROper	PERS.=3|NOMB.=p|GENRE=m|CAS=n	_
+t	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+ont	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	_
+en	en	PRE	MORPH=empty	1
+viotez	vilté	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Mes	mais	CONcoo	MORPH=empty	1
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+dom	dont	PROrel	NOMB.=s|GENRE=m|CAS=i	_
+l	le	DETdef	NOMB.=s|GENRE=n|CAS=n	_
+en	on	PROind	NOMB.=s|GENRE=n|CAS=n	_
+n	ne	ADVneg	MORPH=empty	1
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+cure	cure	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+sui	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	1
+ici	ici	ADVgen	DEGRE=-	_
+envoiez	envoiier	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+ferroi	faire	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+bataille	bataille	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+si	se	CONsub	MORPH=empty	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+ies	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	1
+si	si	ADVgen	DEGRE=-	_
+ossez	oser	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Car	car	ADVgen	DEGRE=-	_
+par	par	PRE	MORPH=empty	_
+icel	icel	DETdem	NOMB.=s|GENRE=m|CAS=r	_
+apostre	apostle	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+que	que	PROrel	NOMB.=s|GENRE=m|CAS=r	2
+l	le	DETdef	NOMB.=s|GENRE=n|CAS=n	_
+en	on	PROind	NOMB.=s|GENRE=n|CAS=n	_
+quiert	querre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+en	en	PRE	MORPH=empty	1
+erumprez	Erumprez	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+
+Ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+t	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+iroi	aler	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+ja	ja	ADVgen	DEGRE=-	_
+ferir	ferir	VERinf	MORPH=empty	_
+par	par	ADVgen	DEGRE=-	2
+en	en	PRE	MORPH=empty	1
+.ii.	deus	PROcar	NOMB.=p|GENRE=f|CAS=r	_
+les	le	DETdef	NOMB.=p|GENRE=m|CAS=r	_
+costez	costé	NOMcom	NOMB.=p|GENRE=m|CAS=r	_
+
+Quant	cant	CONsub	MORPH=empty	1
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+entent	entendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+gries	grief	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+en	en	PROadv	MORPH=empty	2
+fut	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	1
+et	et	CONcoo	MORPH=empty	_
+iriez	irier	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+adonc	adonc	ADVgen	DEGRE=-	_
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+respondu	respondre	VERppe	NOMB.=s|GENRE=m|CAS=r	1
+com	come	CONsub	MORPH=empty	1
+ja	ja	ADVgen	DEGRE=-	_
+oir	öir	VERinf	MORPH=empty	_
+porrez	pöoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=p	_
+
+al	a3+le	PRE.DETdef	NOMB.=s|GENRE=f|CAS=r	_
+moi	mien	ADJpos	PERS.=1|NOMB.=s|GENRE=f|CAS=r	_
+foi	foi	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+Garin	Garin	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+ce	ce	PROdem	NOMB.=s|GENRE=n|CAS=r	1
+saches	savoir	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+por	por	PRE	MORPH=empty	2
+vertez	verité	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+Onque	onque	ADVgen	DEGRE=-	_
+puis	puis	ADVgen	DEGRE=-	_
+icelle	icel	DETdem	NOMB.=s|GENRE=f|CAS=r	_
+ore	ore	NOMcom	NOMB.=s|GENRE=f|CAS=r	3
+que	que	PROrel	NOMB.=s|GENRE=f|CAS=r	2
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+fui	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=1|NOMB.=s	1
+adobez	adober	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+ne	ne	ADVneg	MORPH=empty	1
+joste	joster	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+o	o	PRE	MORPH=empty	4
+nul	nul	DETind	NOMB.=s|GENRE=m|CAS=r	_
+home	ome	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+de	de	PRE	MORPH=empty	_
+si	si	ADVgen	DEGRE=-	_
+bas	bas	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+parentez	parenté	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+
+Si	se	CONsub	MORPH=empty	_
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+fut	estre	VERcjg	MODE=ind|TEMPS=psp|PERS.=3|NOMB.=s	1
+rois	roi	NOMcom	NOMB.=s|GENRE=m|CAS=n	2
+ou	o	CONcoo	MORPH=empty	3
+conte	conte	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+ou	o	CONcoo	MORPH=empty	3
+amirant	amiral	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+clamez	clamer	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Si	se	CONsub	MORPH=empty	_
+te	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+ocis	ocire	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+de	de	PRE	MORPH=empty	_
+coi	coi	PROint	NOMB.=s|GENRE=n|CAS=r	2
+sera	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	1
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=n	1
+pris	pris	NOMcom	NOMB.=s|GENRE=m|CAS=n	1
+montez	monter	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Certes	certes	ADVgen	DEGRE=-	_
+ainz	ainz	ADVgen	DEGRE=-	_
+seroit	estre	VERcjg	MODE=con|PERS.=3|NOMB.=s	1
+laidement	laidement	ADVgen	DEGRE=-	_
+avilez	aviler	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+que	que	CONsub	MORPH=empty	4
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+fiz	fil	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+d	de	PRE	MORPH=empty	_
+un	un	DETndf	NOMB.=s|GENRE=m|CAS=r	_
+vavasor	vavassor	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+me	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+soie	estre	VERcjg	MODE=sub|TEMPS=pst|PERS.=1|NOMB.=s	1
+en	en	PRE	MORPH=empty	1
+champ	champ	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+mellez	mesler	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Mes	mais	CONcoo	MORPH=empty	1
+ce	ce	PROdem	NOMB.=s|GENRE=n|CAS=r	1
+feroi	faire	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+por	por	PRE	MORPH=empty	2
+toi	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=i	_
+ne	ne	ADVneg	MORPH=empty	1
+fis	faire	VERcjg	MODE=ind|TEMPS=psp|PERS.=1|NOMB.=s	_
+por	por	PRE	MORPH=empty	2
+home	ome	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+nez	naistre	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+
+Orendroit	orendroit	ADVgen	DEGRE=-	_
+monteroi	monter	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+u	o	PRE	MORPH=empty	4
+baucen	baucenc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+pomelez	pomelé	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	2
+
+Si	si	ADVgen	DEGRE=-	_
+aroi	avoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+coul	col	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+fort	fort	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+escu	escu	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+litez	listé	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+
+et	et	CONcoo	MORPH=empty	_
+mi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+leroi	laissier	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+chaer	chëoir	VERinf	MORPH=empty	_
+a	a	PRE	MORPH=empty	3
+terre	terre	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+de	de	PRE	MORPH=empty	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+grez	gré	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+
+peis	puis	ADVgen	DEGRE=-	_
+pren	prendre	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+baucen	baucenc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+si	si	ADVgen	DEGRE=-	_
+l'	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+ammaene	amener	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+trez	tref	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+
+Si	se	CONsub	MORPH=empty	_
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+fac	faire	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+ce	ce	PROdem	NOMB.=s|GENRE=n|CAS=r	1
+por	por	PRE	MORPH=empty	2
+toi	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=i	_
+ce	ce	PROdem	NOMB.=s|GENRE=n|CAS=n	1
+sera	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	1
+amitiez	amistié	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+
+et	et	CONcoo	MORPH=empty	_
+respont	respondre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+folie	folie	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+parlez	parler	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_
+
+Ou	o	CONcoo	MORPH=empty	3
+vous	vos	PROper	PERS.=2|NOMB.=p|GENRE=m|CAS=n	_
+voillez	voloir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_
+ou	o	CONcoo	MORPH=empty	3
+non	non	ADVneg	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=r	_
+destrier	destrier	NOMcom	NOMB.=s|GENRE=m|CAS=r	1
+mi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+leirez	laissier	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=p	_
+
+et	et	CONcoo	MORPH=empty	_
+si	si	ADVgen	DEGRE=-	_
+perdroiz	perdre	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=p	_
+la	le	DETdef	NOMB.=s|GENRE=f|CAS=r	_
+teste	teste	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+si	se	CONsub	MORPH=empty	_
+vis	vos	PROper	PERS.=2|NOMB.=p|GENRE=m|CAS=n	_
+ne	ne	ADVneg	MORPH=empty	1
+vos	vos	PROper	PERS.=2|NOMB.=p|GENRE=m|CAS=r	_
+rendez	rendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_
+
+Quant	cant	CONsub	MORPH=empty	1
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+entent	entendre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+a	a	PRE	MORPH=empty	3
+poi	poi	ADVgen	DEGRE=-	_
+n	ne	ADVneg	MORPH=empty	1
+est	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	1
+forsenez	forsener	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Garin	Garin	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+dist	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Fierabras	Fierabras	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+lei	laissier	VERcjg	MODE=imp|PERS.=2|NOMB.=s	_
+moi	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=i	_
+a	a	PRE	MORPH=empty	3
+toi	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=i	_
+parler	parler	VERinf	MORPH=empty	_
+
+hardi	hardi	ADJqua	NOMB.=s|GENRE=m|CAS=n|DEGRE=p	_
+ies	estre	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	1
+combatre	combatre	VERinf	MORPH=empty	_
+miuz	mieus	ADVgen	DEGRE=c	_
+en	en	PROadv	MORPH=empty	2
+faiz	faire	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+amer	amer	VERinf	MORPH=empty	1
+
+par	par	PRE	MORPH=empty	_
+mahomet	Mahumet	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+dex	dieu	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+en	en	PRE	MORPH=empty	1
+toi	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=i	_
+n	ne	ADVneg	MORPH=empty	1
+a	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+que	que	CONsub	MORPH=empty	4
+blamer	blasmer	VERinf	MORPH=empty	_
+
+Mes	mais	CONcoo	MORPH=empty	1
+o	o	PRE	MORPH=empty	4
+nul	nul	PROind	NOMB.=s|GENRE=m|CAS=r	_
+si	si	ADVgen	DEGRE=-	_
+bas	bas	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=p	_
+home	ome	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+ne	ne	ADVneg	MORPH=empty	1
+voli	voloir	VERcjg	MODE=ind|TEMPS=psp|PERS.=1|NOMB.=s	_
+onc	onque	ADVgen	DEGRE=-	_
+joster	joster	VERinf	MORPH=empty	_
+
+Car	car	CONcoo	MORPH=empty	_
+si	se	CONsub	MORPH=empty	_
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+t	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+ocie	ocire	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+mout	mout	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+en	en	PROadv	MORPH=empty	2
+devroit	devoir	VERcjg	MODE=con|PERS.=3|NOMB.=s	_
+peser	peser	VERinf	MORPH=empty	_
+
+james	ja+mais1	ADVgen	DEGRE=-	_
+n	ne	ADVneg	MORPH=empty	1
+avraie	avoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+anor	onor	NOMcom	NOMB.=s|GENRE=f|CAS=r	_
+je	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+nu	ne1+il	ADVneg.PROper	PERS.=3|NOMB.=s|GENRE=n|CAS=r	_
+te	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=i	_
+quier	querre	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+celer	celer	VERinf	MORPH=empty	1
+
+Se	se	CONsub	MORPH=empty	_
+au	a3+le	PRE.DETdef	NOMB.=s|GENRE=m|CAS=r	_
+fiz	fil	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+d	de	PRE	MORPH=empty	_
+un	un	DETndf	NOMB.=s|GENRE=m|CAS=r	_
+vavasor	vavassor	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+ere	estre	VERcjg	MODE=ind|TEMPS=ipf|PERS.=1|NOMB.=s	1
+venu	venir	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+joster	joster	VERinf	MORPH=empty	_
+
+Mes	mais	CONcoo	MORPH=empty	1
+ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+te	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+voil	voloir	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+greignor	graignor	ADJqua	NOMB.=s|GENRE=m|CAS=r|DEGRE=c	_
+anor	onor	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+mostreer	mostrer	VERinf	MORPH=empty	_
+
+De	de	PRE	MORPH=empty	_
+sus	sus	PRE	MORPH=empty	_
+ce	ce	DETdem	NOMB.=s|GENRE=m|CAS=r	2
+baucen	baucenc	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+sor	sor	ADVgen	DEGRE=-	2
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+i	i	PROadv	MORPH=empty	2
+verras	vëoir	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=s	_
+ja	ja	ADVgen	DEGRE=-	_
+monter	monter	VERinf	MORPH=empty	_
+
+et	et	CONcoo	MORPH=empty	_
+tu	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=n	_
+t'	tu	PROper	PERS.=2|NOMB.=s|GENRE=m|CAS=r	_
+eslaiseras	eslaissier	VERcjg	MODE=ind|TEMPS=fut|PERS.=2|NOMB.=s	_
+quant	cant	ADVgen	DEGRE=-	2
+que	que	CONsub	MORPH=empty	4
+puet	pöoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+randoner	randoner	VERinf	MORPH=empty	_
+
+Ge	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=r	_
+i	i	PROadv	MORPH=empty	2
+leroi	laissier	VERcjg	MODE=ind|TEMPS=fut|PERS.=1|NOMB.=s	_
+chaier	chëoir	VERinf	MORPH=empty	_
+et	et	CONcoo	MORPH=empty	_
+de	de	PRE	MORPH=empty	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+gre	gré	NOMcom	NOMB.=s|GENRE=m|CAS=r	2
+verser	verser	VERinf	MORPH=empty	1
+
+Bien	bien	ADVgen	DEGRE=p	1
+en	en	PROadv	MORPH=empty	2
+pouz	pöoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+cheval	cheval	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+mon	mon	DETpos	PERS.=1|NOMB.=s|GENRE=m|CAS=r	1
+escu	escu	NOMcom	NOMB.=s|GENRE=m|CAS=r	_
+porter	porter	VERinf	MORPH=empty	_
+
+puis	puis	ADVgen	DEGRE=-	_
+m	je	PROper	PERS.=1|NOMB.=s|GENRE=m|CAS=n	_
+en	en	PROadv	MORPH=empty	2
+voi	aler	VERcjg	MODE=ind|TEMPS=pst|PERS.=1|NOMB.=s	_
+Rollant	Rollant	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+ou	o	CONcoo	MORPH=empty	3
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+son	son	DETpos	PERS.=3|NOMB.=s|GENRE=m|CAS=n	4
+per	per	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+
+Berart	Berart	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+mondidier	Mondidier	NOMpro	NOMB.=s|GENRE=m|CAS=r	_
+et	et	CONcoo	MORPH=empty	_
+l	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+escoz	escot	NOMcom	NOMB.=s|GENRE=m|CAS=n	3
+gilemer	Guilemer	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+
+Ou	o	CONcoo	MORPH=empty	3
+ogier	Ogier	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+danois	Danois	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+qui	qui	PROrel	NOMB.=s|GENRE=m|CAS=n	_
+tant	tant	ADVgen	DEGRE=-	_
+fait	faire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+a	a	PRE	MORPH=empty	3
+loer	löer	VERinf	MORPH=empty	1
+
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+nus	nul	PROind	NOMB.=s|GENRE=m|CAS=n	_
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+ose	oser	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+ne	ne	CONcoo	MORPH=empty	2
+venir	venir	VERinf	MORPH=empty	_
+ne	ne	CONcoo	MORPH=empty	2
+aler	aler	VERinf	MORPH=empty	_
+
+Si	se	CONsub	MORPH=empty	_
+en	en	PROadv	MORPH=empty	2
+i	i	PROadv	MORPH=empty	2
+vienge	aler	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=p	_
+.ii.	deus	PROcar	NOMB.=p|GENRE=m|CAS=n	_
+por	por	PRE	MORPH=empty	2
+lor	lor	DETpos	PERS.=3|NOMB.=p|GENRE=m|CAS=r	2
+cors	cors	NOMcom	NOMB.=p|GENRE=m|CAS=r	1
+esprover	esprover	VERinf	MORPH=empty	_
+
+ne	ne	CONcoo	MORPH=empty	2
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+tiez	tierz	PROord	NOMB.=s|GENRE=m|CAS=n	_
+ne	ne	CONcoo	MORPH=empty	2
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+quart	cart	PROord	NOMB.=s|GENRE=m|CAS=n	_
+n	ne	ADVneg	MORPH=empty	1
+i	i	PROadv	MORPH=empty	2
+sera	estre	VERcjg	MODE=ind|TEMPS=fut|PERS.=3|NOMB.=s	1
+refusez	refuser	VERppe	NOMB.=s|GENRE=m|CAS=n	_
+
+Certes	certes	ADVgen	DEGRE=-	_
+dit	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+Olivier	Oliver	NOMpro	NOMB.=s|GENRE=m|CAS=n	_
+de	de	PRE	MORPH=empty	_
+folie	folie	NOMcom	NOMB.=s|GENRE=f|CAS=r	2
+parlez	parler	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_
+
+et	et	CONcoo	MORPH=empty	_
+li	le	DETdef	NOMB.=s|GENRE=m|CAS=n	_
+vilains	vilain	NOMcom	NOMB.=s|GENRE=m|CAS=n	_
+le	il	PROper	PERS.=3|NOMB.=s|GENRE=m|CAS=r	_
+dit	dire	VERcjg	MODE=ind|TEMPS=pst|PERS.=3|NOMB.=s	_
+pieça	pieç'a	ADVgen	DEGRE=-	_
+oï	öir	VERppe	NOMB.=s|GENRE=m|CAS=r	_
+l	il	PROper	PERS.=3|NOMB.=s|GENRE=n|CAS=r	_
+avez	avoir	VERcjg	MODE=ind|TEMPS=pst|PERS.=2|NOMB.=p	_
+
