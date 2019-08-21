@@ -1,22 +1,14 @@
 import torch.nn as nn
-from ..utils.labels import CategoryEncoder, CharEncoder
+from ..utils.labels import MultiEncoder
 
 
 class Base(nn.Module):
     """
     Abstract model class defining the model interface
     """
-    def __init__(self,
-                 pos_encoder: CategoryEncoder,
-                 lemma_encoder: CategoryEncoder,
-                 char_encoder: CharEncoder,
-                 output_encoder: CategoryEncoder,
-                 **kwargs):
+    def __init__(self, label_encoder: MultiEncoder, **kwargs):
 
-        self.pos_encoder: CategoryEncoder = pos_encoder
-        self.lemma_encoder: CategoryEncoder = lemma_encoder
-        self.output_encoder: output_encoder = output_encoder
-        self.char_encoder: CharEncoder = char_encoder
+        self.label_encoder: MultiEncoder = label_encoder
 
         super().__init__()
 

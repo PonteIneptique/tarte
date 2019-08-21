@@ -92,6 +92,19 @@ class CategoryEncoder:
 
 
 class OutputEncoder(CategoryEncoder):
+    def __init__(self):
+        super(OutputEncoder, self).__init__()
+
+        self.itos: Dict[int, str] = {
+            0: CategoryEncoder.DEFAULT_UNKNOWN
+        }
+        self.stoi: Dict[str, int] = {
+            0: CategoryEncoder.DEFAULT_UNKNOWN
+        }
+
+    def get_pad(self):
+        return -100  # As Nll loss default
+
     def dumps(self, as_string=True):
         key_values = list(self.stoi.items())
         if not as_string:
@@ -177,6 +190,7 @@ class MultiEncoder:
             self.pos.encode_group(*pos_lst)
             self.token.encode_group(*tok_lst)
             self.output.encode(disambiguation)
+            self.char.encode(tok)
 
     def fit_reader(self, reader):
         """

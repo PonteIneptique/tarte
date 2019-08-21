@@ -1,6 +1,7 @@
 # Python dependencies
 import copy
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
 
 # External Packages
@@ -13,7 +14,7 @@ from .embeddings import WordEmbedding, CharEmbedding
 from .classifier import Classifier
 from .encoder import DataEncoder
 
-from ..utils.labels import CategoryEncoder, CharEncoder, MultiEncoder
+from ..utils.labels import MultiEncoder
 
 
 class TarteModule(Base):
@@ -21,11 +22,16 @@ class TarteModule(Base):
         "wemb_size": 100,
         "pemb_size": 10,
         "cemb_size": 100,
+        "femb_size": 100,
+        "concat_encoder": True,
         "w_enc": 256,
         "p_enc": 128,
+        "f_enc": 256,
+        "c_enc": 256,
         "word_dropout": 0.25,
         "dropout": 0.25,
-        "init": True
+        "init": True,
+        "device": "cpu"
     }
 
     def get_args_and_kwargs(self):
@@ -34,8 +40,8 @@ class TarteModule(Base):
         to instantiate the model (excluding the label_encoder and tasks)
         """
         return (
-            (self.pos_encoder, self.lemma_encoder, self.char_encoder, self.output_encoder), # Args
-            self.arguments # Kwargs
+            (self.label_encoder, ),  # Args
+            self.arguments  # Kwargs
         )
 
     def __init__(self, multi_encoder: MultiEncoder, **kwargs):
@@ -43,6 +49,8 @@ class TarteModule(Base):
 
         :param kwargs:
         """
+        super(TarteModule, self).__init__(multi_encoder)
+
         self.arguments = copy.deepcopy(TarteModule.DEFAULTS)
         self.arguments.update(kwargs)
 
@@ -53,30 +61,41 @@ class TarteModule(Base):
         self.dropout = self.arguments["dropout"]
 
         # Embedding
-        self.word_embedding = WordEmbedding(multi_encoder.lemma.size(), self.arguments["wemb_size"])
-        self.pos__embedding = WordEmbedding(multi_encoder.pos.size(), self.arguments["pemb_size"])
-        self.char_embedding = CharEmbedding(multi_encoder.char.size(), self.arguments["cemb_size"])
+        self.form_embedding = WordEmbedding(
+            self.label_encoder.token.size(), self.arguments["femb_size"])
+        self.word_embedding = WordEmbedding(
+            self.label_encoder.lemma.size(), self.arguments["wemb_size"])
+        self.pos__embedding = WordEmbedding(
+            self.label_encoder.pos.size(), self.arguments["pemb_size"])
+        self.char_embedding = WordEmbedding(
+            self.label_encoder.char.size(), self.arguments["cemb_size"])
 
-        # Encoder
-        self.word_enc = DataEncoder(self.arguments["wemb_size"], self.arguments["w_enc"])
-        self.pos__enc = DataEncoder(self.arguments["pemb_size"], self.arguments["p_enc"])
+        # To Categorize size
+        to_categorize_size = 3
 
-        # Compute size of decoder input
-        #   "+1" is the target word
-        self.decoder_input_size = self.arguments["w_enc"] + self.arguments["p_enc"] + self.arguments["c_size"] + 1
-
-        # Classifier
-        self.decoder: decoder.LinearDecoder = Classifier(
-            multi_encoder.output,
-            self.decoder_input_size
+        # Encoder:
+        self.context_encoder = DataEncoder(
+            channels=100,
+            emb_dim=(
+                self.arguments["wemb_size"] + self.arguments["femb_size"] + self.arguments["pemb_size"]
+            ),
+            kernel_size=3,
+        )
+        self.input_encoder = nn.Linear(
+            in_features=self.arguments["wemb_size"] + self.arguments["femb_size"] + self.arguments["pemb_size"],
+            out_features=self.context_encoder.channels
         )
 
-        super(TarteModule, self).__init__(multi_encoder)
+        # Classifier
+        self.decoder: decoder.LinearDecoder = Classifier(input_size=self.context_encoder.channels * 2,
+                                                         output_encoder=self.label_encoder.output)
 
         # Initialize
         if self.arguments["init"]:
             initialization.init_embeddings(self.word_embedding)
             initialization.init_embeddings(self.pos__embedding)
+            initialization.init_embeddings(self.form_embedding)
+            initialization.init_embeddings(self.char_embedding)
 
     def concatenator(self, target, w_encoded, p_encoded, cemb):
         """ Concatenate various results of each steps before the linear classifier
@@ -89,44 +108,53 @@ class TarteModule(Base):
         """
         return torch.cat([target, w_encoded, p_encoded, cemb], dim=-1)
 
+    def categorize_embedding(self, batch):
+        """ Batch is 3 * batch_size
+        Where 3 is
+        """
+
     def loss(self, batch_data):
         """
 
-        :param token_class: Target token to disambiguate
-        :param context_lemma: Context with lemmas
-        :param context_pos: Context with POS
-        :param token_chars: Characters of the form
-        :param lengths: Sentence lengths
         """
-        (token_class, context_lemma, context_pos, token_chars, lengths), targets = batch_data
+        (
+            (le, po, to),
+            (token_chars, chars_length),
+            (context_form, form_length),
+            (context_lemma, lemma_length),
+            (context_pos, pos_length)
+        ), targets = batch_data
+
+        le = self.word_embedding(le).unsqueeze(0)
+        po = self.pos__embedding(po).unsqueeze(0)
+        to = self.form_embedding(to).unsqueeze(0)
 
         # Compute embeddings
         lem = self.word_embedding(context_lemma)
         pos = self.pos__embedding(context_pos)
-        chars, _ = self.char_embedding(token_chars)
+        frm = self.form_embedding(context_form)
+        #chars = self.char_embedding(token_chars)
 
         # Dropout
         lem = F.dropout(lem, p=self.dropout, training=self.training)
         pos = F.dropout(pos, p=self.dropout, training=self.training)
-        chars = F.dropout(chars, p=self.dropout, training=self.training)
+        frm = F.dropout(frm, p=self.dropout, training=self.training)
+        #chars = F.dropout(chars, p=self.dropout, training=self.training)
+
+        # Tensor(max_sentence_length * batch_size * (lem+pos+frm embedding size))
+        encoder_input = torch.cat([lem, pos, frm], dim=-1).unsqueeze(0).transpose(1, 2)
+
+        print(encoder_input.size())
 
         # Compute encodings
-        w_enc = self.word_enc(lem, lengths)
-        p_enc = self.pos__enc(pos)
+        # Tensor(max_sentence_length * batch_size * (2*enc_size))
+        context_encoder = self.context_encoder(encoder_input)
 
-        w_enc = F.dropout(w_enc, p=0, training=self.training)
-        p_enc = F.dropout(p_enc, p=0, training=self.training)
+        cat = torch.cat([le, po, to], dim=-1).unsqueeze(2)
+        input_encoder = self.input_encoder(cat).squeeze()
 
-        # Merge
-        final_input = self.concatenator(
-            target=token_class,
-            w_encoded=w_enc,
-            p_encoded=p_enc,
-            cemb=chars
-        )
-
-        # Out
-        logits = self.decoder(final_input)
+        # Tensor(batch_size * classes)
+        logits = self.decoder(torch.cat([context_encoder, input_encoder], dim=-1))
 
         return self.decoder.loss(logits, targets)
 
@@ -155,6 +183,10 @@ class TarteModule(Base):
             p_encoded=p_enc,
             cemb=chars
         )
+
+        # Encode
+        enc_output = self.enc(final_input)
+        print(enc_output.size())
 
         # Out
         out = self.decoder(final_input)

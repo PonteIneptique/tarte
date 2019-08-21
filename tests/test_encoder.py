@@ -89,8 +89,6 @@ class TestDataset(TestCase):
             "Dumping and loading should not create discrepancies"
         )
 
-
-
     def test_batching(self):
         generator = self.dataset.batch_generator()
 
