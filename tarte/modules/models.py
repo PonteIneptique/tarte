@@ -143,12 +143,10 @@ class TarteModule(Base):
 
         # Tensor(1 * batch_size * max_sentence_length * (lem+pos+frm embedding size))
         encoder_input = torch.cat([lem, pos, frm], dim=-1).unsqueeze(0).transpose(1, 2)
-        print(encoder_input.size())
 
         # Compute encodings
         # Tensor(1 * batch_size * 1 * channels)
         context_encoder = self.context_encoder(encoder_input)
-        print(context_encoder.size())
 
         # Add a dimension to reflect shape of encoder input
         # Tensor(1 * batch_size * 1 * (lem+pos+frm embedding size))

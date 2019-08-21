@@ -99,7 +99,7 @@ class OutputEncoder(CategoryEncoder):
             0: CategoryEncoder.DEFAULT_UNKNOWN
         }
         self.stoi: Dict[str, int] = {
-            0: CategoryEncoder.DEFAULT_UNKNOWN
+            CategoryEncoder.DEFAULT_UNKNOWN: 0
         }
 
     def get_pad(self):

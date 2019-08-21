@@ -44,7 +44,7 @@ class TestDataset(TestCase):
             "Certes should always be the second encoded token"
         )
         self.assertEqual(
-            ['<PAD>', '<UNK>', ('estre', '1'), ('en', '1')],
+            ['<UNK>', ('estre', '1'), ('en', '1')],
             list(self.encoder.output.stoi.keys()),
             "Disambiguation target should be correctly encoded as TUPLE"
         )
@@ -93,11 +93,12 @@ class TestDataset(TestCase):
         generator = self.dataset.batch_generator()
 
         i = 0
-        for batch_input, batch_ouput in generator:
+        for batch_input, batch_output in generator:
             cat, (char, _), (tok, _), (lem, _), (pos, _) = batch_input
 
+            batch_output = batch_output.tolist()
             self.assertEqual(
-                list(self.encoder.output.inverse_transform(batch_ouput)), [('estre', '1'), ('en', '1')],
+                list(self.encoder.output.inverse_transform(batch_output)), [('estre', '1'), ('en', '1')],
                 "Output should be correctly batched"
             )
             self.assertEqual(

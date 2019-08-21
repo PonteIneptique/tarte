@@ -27,6 +27,10 @@ class Dataset(pie.data.dataset.Dataset):
         """
         return pack_batch(self.label_encoder, batch, device or self.device)
 
+    @staticmethod
+    def get_nelement(batch):
+        return len(batch[1])
+
 
 def pack_batch(label_encoder: MultiEncoder, batch, device=None):
     """ Transform batch data to tensors

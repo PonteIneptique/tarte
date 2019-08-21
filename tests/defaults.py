@@ -17,7 +17,8 @@ DefaultSettings = Settings({
       {"name": "lemma"},
       {"name": "pos"},
       {"name": "Dis"}
-  ],"buffer_size": 10000,  # maximum number of sentence in memory at any given time
+  ],
+  "buffer_size": 10000,  # maximum number of sentence in memory at any given time
   "minimize_pad": False,  # preprocess data to have similar sentence lengths inside batch
   "epochs": 5,  # number of epochs
   "batch_size": 50,  # batch size
