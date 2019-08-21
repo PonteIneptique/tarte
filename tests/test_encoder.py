@@ -49,6 +49,17 @@ class TestDataset(TestCase):
             "Disambiguation target should be correctly encoded as TUPLE"
         )
 
+    def test_fit_then_dump_then_load(self):
+        """ Check than dumping then loading is equal """
+        self.encoder.fit_reader(self.reader)
+        dumped = self.encoder.dumps()
+        loaded = MultiEncoder.load(json.loads(dumped))
+
+        self.assertEqual(self.encoder.lemma, loaded.lemma)
+        self.assertEqual(self.encoder.char, loaded.char)
+        self.assertEqual(self.encoder.output, loaded.output)
+        self.assertEqual(self.encoder, loaded, "Loading multi-encoder should be equal to the dumped one")
+
     def test_encoding(self):
         label_encoder = CategoryEncoder()
 
@@ -77,6 +88,8 @@ class TestDataset(TestCase):
             (CharEncoder.load(json.loads(char_encoder.dumps()))).stoi, char_encoder.stoi,
             "Dumping and loading should not create discrepancies"
         )
+
+
 
     def test_batching(self):
         generator = self.dataset.batch_generator()

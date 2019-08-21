@@ -70,20 +70,44 @@ class CategoryEncoder:
             else:
                 yield self.decode(inp)
 
-    @staticmethod
-    def load(stoi: Dict[str, int]) -> "CategoryEncoder":
+    @classmethod
+    def load(cls, stoi: Dict[str, int]) -> "CategoryEncoder":
         """ Generates a category encoder
 
         :param stoi: STOI data as dict
         :return: JSON
         """
-        obj = CategoryEncoder()
+        obj = cls()
         obj.stoi.update(stoi)
         obj.itos.update({v: k for (k, v) in stoi.items()})
         return obj
 
-    def dumps(self):
+    def dumps(self, as_string=True):
+        if not as_string:
+            return self.stoi
         return dumps(self.stoi)
+
+    def __eq__(self, other):
+        return type(self) == type(other) and self.stoi == other.stoi
+
+
+class OutputEncoder(CategoryEncoder):
+    def dumps(self, as_string=True):
+        key_values = list(self.stoi.items())
+        if not as_string:
+            return key_values
+        return dumps(key_values)
+
+    @classmethod
+    def load(cls, stoi: List) -> "OutputEncoder":
+        obj = cls()
+        for k, v in stoi:
+            if isinstance(k, str):
+                obj.stoi[k] = v
+            else:
+                obj.stoi[tuple(k)] = v
+
+        return obj
 
 
 class CharEncoder(CategoryEncoder):
@@ -99,18 +123,52 @@ class MultiEncoder:
             self,
             lemma_encoder: CategoryEncoder = None,
             token_encoder: CategoryEncoder = None,
-            output_encoder: CategoryEncoder = None,
+            output_encoder: OutputEncoder = None,
             pos_encoder: CategoryEncoder = None,
             char_encoder: CharEncoder = None
     ):
         self.lemma: CategoryEncoder = lemma_encoder or CategoryEncoder()
         self.token: CategoryEncoder = token_encoder or CategoryEncoder()
-        self.output: CategoryEncoder = output_encoder or CategoryEncoder()
+        self.output: OutputEncoder = output_encoder or OutputEncoder()
         self.pos: CategoryEncoder = pos_encoder or CategoryEncoder()
         self.char: CharEncoder = char_encoder or CharEncoder()
 
+    def __eq__(self, other):
+        return type(self) == type(other) and \
+               self.lemma == other.lemma and \
+               self.token == other.token and \
+               self.output == other.output and \
+               self.pos == other.pos and \
+               self.char == other.char
+
+    @classmethod
+    def load(cls, dumped: Dict[str, Dict[str, int]]) -> "MultiEncoder":
+        """ Generates a category encoder
+
+        :param dumped: Dict of each STOI
+        :return: JSON
+        """
+        obj = cls(
+            lemma_encoder=CategoryEncoder.load(dumped["lemma_encoder"]),
+            token_encoder=CategoryEncoder.load(dumped["token_encoder"]),
+            output_encoder=OutputEncoder.load(dumped["output_encoder"]),
+            pos_encoder=CategoryEncoder.load(dumped["pos_encoder"]),
+            char_encoder=CharEncoder.load(dumped["char_encoder"])
+        )
+        return obj
+
+    def dumps(self):
+        return dumps({
+            "lemma_encoder": self.lemma.dumps(as_string=False),
+            "token_encoder": self.token.dumps(as_string=False),
+            "output_encoder": self.output.dumps(as_string=False),
+            "pos_encoder": self.pos.dumps(as_string=False),
+            "char_encoder": self.char.dumps(as_string=False)
+        })
+
     def fit(self, lines: Iterator[InputAnnotation]):
-        # Todo: Implement
+        """ Read all `lines` and fit the vocabulary
+        """
         for idx, inp in enumerate(lines):
             (lem, pos, tok, lem_lst, pos_lst, tok_lst), disambiguation = self.regularize_input(inp)
 
