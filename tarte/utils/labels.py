@@ -1,4 +1,4 @@
-from typing import Dict, Union, List, Tuple, Iterator
+from typing import Dict, Union, List, Tuple, Iterator, Iterable
 from json import dumps, loads
 
 import pie.data.reader
@@ -63,9 +63,12 @@ class CategoryEncoder:
         """
         return list(self.encode_group(*categories))
 
-    def inverse_transform(self):
-        pass
-        # Todo: Implement
+    def inverse_transform(self, batch_output: Iterable[int]) -> Iterator[Union[str, Tuple[str, str]]]:
+        for inp in batch_output:
+            if isinstance(inp, list):
+                yield list(self.inverse_transform(inp))
+            else:
+                yield self.decode(inp)
 
     @staticmethod
     def load(stoi: Dict[str, int]) -> "CategoryEncoder":
@@ -141,7 +144,7 @@ class MultiEncoder:
             self,
             sentence_batch
     ) -> Tuple[
-        Tuple[List[int], List[List], List[List], List[List]],
+        Tuple[List[Tuple[int, int, int]], List[int], List[List], List[List], List[List]],
         List[int]
     ]:
         """
@@ -169,7 +172,7 @@ class MultiEncoder:
         # List of sentence where each word is kept by its POS
         pos__batch: List[List[int]] = []
         # Token batch
-        toke_batch: List[int] = []
+        toke_batch: List[List[int]] = []
         # Expected output
         output_batch: List[int] = []
         # Triple data input (Lemma, POS, TOK)
@@ -179,11 +182,10 @@ class MultiEncoder:
             # If we have the disambiguation class
             (lem, pos, tok, lem_lst, pos_lst, tok_lst), disambiguation = self.regularize_input(input_data)
 
-            lemm_batch = self.lemma.transform(lem_lst)
-            pos__batch = self.pos.transform(pos_lst)
-            toke_batch = self.token.transform(tok_lst)
+            lemm_batch.append(self.lemma.transform(lem_lst))
+            pos__batch.append(self.pos.transform(pos_lst))
+            toke_batch.append(self.token.transform(tok_lst))
             char_batch.append(self.char.encode(tok))
-
 
             to_categorize_batch.append((
                 self.lemma.encode(lem),
@@ -194,4 +196,4 @@ class MultiEncoder:
             output_batch.append(self.output.encode(disambiguation))
 
         # Tuple of Input(input_token, context_lemma, context_pos, token_chars), disambiguated
-        return (toke_batch, lemm_batch, pos__batch, char_batch), output_batch
+        return (to_categorize_batch, char_batch, toke_batch, lemm_batch, pos__batch), output_batch

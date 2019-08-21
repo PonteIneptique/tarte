@@ -77,3 +77,23 @@ class TestDataset(TestCase):
             (CharEncoder.load(json.loads(char_encoder.dumps()))).stoi, char_encoder.stoi,
             "Dumping and loading should not create discrepancies"
         )
+
+    def test_batching(self):
+        generator = self.dataset.batch_generator()
+
+        i = 0
+        for batch_input, batch_ouput in generator:
+            cat, (char, _), (tok, _), (lem, _), (pos, _) = batch_input
+
+            self.assertEqual(
+                list(self.encoder.output.inverse_transform(batch_ouput)), [('estre', '1'), ('en', '1')],
+                "Output should be correctly batched"
+            )
+            self.assertEqual(
+                list(self.encoder.lemma.inverse_transform(lem.transpose(1, 0).tolist())),
+                [['certes', 'dire', 'Oliver', 'je', 'estre', 'en', 'grant', 'pensé'],
+                 ['certes', 'dire', 'Oliver', 'je', 'estre', 'en', 'grant', 'pensé']],
+                "Output should be correctly batched"
+            )
+            i += 1
+        self.assertEqual(i, 1, "One batch should have happened")

@@ -1,3 +1,5 @@
+import torch
+
 import pie.data.dataset
 import pie.data.reader
 import pie.settings
@@ -27,17 +29,19 @@ class Dataset(pie.data.dataset.Dataset):
 
 
 def pack_batch(label_encoder: MultiEncoder, batch, device=None):
+    """ Transform batch data to tensors
+
+    Chars, forms, lemma, pos batches are:
+        Tuple(Tensor(max_len, batch_size), Tensor(batch_size))
+    To_categorize are
+        Tensor(3, batch_size) where 3 is input pos, input token and input lemma
     """
-    Transform batch data to tensors
-    """
-    (word, char), tasks = label_encoder.transform(batch)
+    (to_categorize, chars, forms, lemma, pos), output_batch = label_encoder.transform(batch)
 
-    word = torch_utils.pad_batch(word, label_encoder.word.get_pad(), device=device)
-    char = torch_utils.pad_batch(char, label_encoder.char.get_pad(), device=device)
+    forms = torch_utils.pad_batch(forms, label_encoder.token.get_pad(), device=device)
+    lemma = torch_utils.pad_batch(lemma, label_encoder.lemma.get_pad(), device=device)
+    pos = torch_utils.pad_batch(pos, label_encoder.pos.get_pad(), device=device)
+    chars = torch_utils.pad_batch(chars, label_encoder.char.get_pad(), device=device)
+    to_categorize = torch.tensor(to_categorize, dtype=torch.int64, device=device).transpose(1, 0)
 
-    output_tasks = {}
-    for task, data in tasks.items():
-        output_tasks[task] = torch_utils.pad_batch(
-            data, label_encoder.tasks[task].get_pad(), device=device)
-
-    return (word, char), output_tasks
+    return (to_categorize, chars, forms, lemma, pos), output_batch
