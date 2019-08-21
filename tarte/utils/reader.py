@@ -1,14 +1,22 @@
-from typing import List, Dict, Union, Generator, Tuple
-import copy
+from typing import List, Union, Iterator, Tuple
 
 from pie.data.reader import Reader
 
 from tarte.utils import constants
 
+# At some point, information that is used should be configurable, so that maybe one morph info is useful to decide ?
+InputAnnotation = Tuple[
+    # target_lemma, target_pos, target_token
+    str, str, str,
+    # sentence_in_lemma, sentence_in_pos, sentence_in_tokens
+    List[str], List[str], List[str]
+]
+
 
 class ReaderWrapper(Reader):
     def __init__(self, settings, *input_path):
-        self.reader = Reader(settings, *input_path)
+        self.settings = settings
+        self.reader = Reader(self.settings, *input_path)
         self.nsents = None
 
     def get_reader(self, fpath):
@@ -27,39 +35,56 @@ class ReaderWrapper(Reader):
         """
         return self.reader.check_tasks(expected=expected)
 
-    def readsents(self, silent=True, only_tokens=False) -> Union[
-        Generator[List[str], None, None],  # if only_tokens is true
-        Generator[Tuple[Tuple[str, int], Tuple[List[str], Dict[str, List[str]], List[Tuple[str, str]]]], None, None]
-    ]:
+    def readsents(self, silent=True, only_tokens=False)\
+            -> Iterator[Union[
+                InputAnnotation,  # if only_tokens is true
+                Tuple[InputAnnotation, List[str]]
+            ]]:
         """
         Read sents over files
-        #
+
         yields:
-            if only_tokens: inp as list of tokens
-            else          : (Filepath, SentenceIndex), (inp, Dictionary of tasks, (lemma, disambiguity ID))
+            When only tokens:
+                InputAnnotation -> Tuple(
+                    target_lemma, target_pos, target_token
+                    sentence_in_lemma, sentence_in_pos, sentence_in_tokens
+                )
+            Otherwise
+                Tuple(
+                    (Filepath, SentenceIndex),
+                    (InputAnnotation, disambiguated ID)
+                )
         """
-        if only_tokens:
-            return self.reader.readsents(silent=silent, only_tokens=only_tokens)
-
         total = 0
-        for ((filepath, sentence_index), (inp, tasks)) in self.reader.readsents(silent=silent, only_tokens=only_tokens):
-            for index, disambiguation in enumerate(tasks[constants.disambiguation_task_name]):
-                if disambiguation and disambiguation.isnumeric():
-                    copy_tasks = {
-                        constants.lemma_task_name: tasks[constants.lemma_task_name],
-                        constants.pos_task_name: tasks[constants.pos_task_name]
-                    }
+        for ((filepath, sentence_index), (inp, tasks)) in self.reader.readsents(silent=silent, only_tokens=False):
 
+            # The following part ought to be changed
+            #   as this will need to check the lemma for a list of know tokens that
+            #   needs to be disambiguated.
+
+            disambiguated = tasks.get(constants.disambiguation_task_name, list([""] * len(inp)))
+            for index, disambiguation in enumerate(disambiguated):
+                if disambiguation and disambiguation.isnumeric():
+                    # We have one more sentence
                     total += 1
 
-                    yield (
-                        (filepath, total),
-                        (
-                            inp,
-                            copy_tasks,
-                            (tasks[constants.lemma_task_name][index], disambiguation)
-                        )
+                    # Input format is constant
+                    tokens = (
+                        tasks[constants.lemma_task_name][index],
+                        tasks[constants.pos_task_name][index],
+                        inp[index],
+                        # Lemma
+                        tasks[constants.lemma_task_name],
+                        # POS
+                        tasks[constants.pos_task_name],
+                        # Tokens
+                        inp
                     )
+
+                    if only_tokens:
+                        yield tokens
+                    else:
+                        yield ((filepath, total), (tokens, disambiguation))
 
     def get_nsents(self):
         """

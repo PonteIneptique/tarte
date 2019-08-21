@@ -1,9 +1,11 @@
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Union, List, Tuple, Iterator
 from json import dumps, loads
 
 import pie.data.reader
 
 from . import constants
+from .reader import InputAnnotation
+
 
 class CategoryEncoder:
     DEFAULT_PADDING = "<PAD>"
@@ -25,7 +27,7 @@ class CategoryEncoder:
     def size(self):
         return len(self.itos)
 
-    def encode(self, category: str) -> int:
+    def encode(self, category: Union[str, Tuple[str, str]]) -> int:
         """ Record a token as a category
 
         :param category:
@@ -92,37 +94,28 @@ class CharEncoder(CategoryEncoder):
 class MultiEncoder:
     def __init__(
             self,
-            lemma_encoder: CategoryEncoder,
-            token_encoder: CategoryEncoder,
-            output_encoder: CategoryEncoder,
-            pos_encoder: CategoryEncoder,
-            char_encoder: CharEncoder
+            lemma_encoder: CategoryEncoder = None,
+            token_encoder: CategoryEncoder = None,
+            output_encoder: CategoryEncoder = None,
+            pos_encoder: CategoryEncoder = None,
+            char_encoder: CharEncoder = None
     ):
-        self.lemma: CategoryEncoder = lemma_encoder
-        self.token: CategoryEncoder = token_encoder
-        self.output: CategoryEncoder = output_encoder
-        self.pos: CategoryEncoder = pos_encoder
-        self.char: CharEncoder = char_encoder
+        self.lemma: CategoryEncoder = lemma_encoder or CategoryEncoder()
+        self.token: CategoryEncoder = token_encoder or CategoryEncoder()
+        self.output: CategoryEncoder = output_encoder or CategoryEncoder()
+        self.pos: CategoryEncoder = pos_encoder or CategoryEncoder()
+        self.char: CharEncoder = char_encoder or CharEncoder()
 
-    def fit(self, reader: pie.data.reader):
+    def fit(self, lines: Iterator[InputAnnotation]):
         # Todo: Implement
-        raise NotImplementedError
         for idx, inp in enumerate(lines):
-            tasks = None
-            if isinstance(inp, tuple):
-                inp, tasks = inp
+            (lem, pos, tok, lem_lst, pos_lst, tok_lst), disambiguation = self.regularize_input(inp)
 
             # input
-            self.word.add(inp)
-            self.char.add(inp)
-
-            for le in self.tasks.values():
-                le.add(tasks[le.target], inp)
-
-        self.word.compute_vocab()
-        self.char.compute_vocab()
-        for le in self.tasks.values():
-            le.compute_vocab()
+            self.lemma.encode_group(*lem_lst)
+            self.pos.encode_group(*pos_lst)
+            self.token.encode_group(*tok_lst)
+            self.output.encode(disambiguation)
 
     def fit_reader(self, reader):
         """
@@ -130,17 +123,27 @@ class MultiEncoder:
         """
         return self.fit(line for (_, line) in reader.readsents(silent=False))
 
-    def get_category(self, lemma, disambiguation_code):
-        return lemma+"_"+disambiguation_code
+    def get_category(self, lemma, disambiguation_code) -> Tuple[str, str]:
+        return lemma, disambiguation_code
+
+    def regularize_input(self, input_data: Tuple) -> Tuple[InputAnnotation, Union[None, str]]:
+        """ Regularize the format of the input """
+        # If we have the disambiguation class
+        if isinstance(input_data, tuple) and len(input_data) == 2:
+            (lem, pos, tok, lem_lst, pos_lst, tok_lst), disambiguation = input_data
+            disambiguation = self.get_category(lem, disambiguation)
+        else:
+            lem, pos, tok, lem_lst, pos_lst, tok_lst = input_data
+            disambiguation = None
+        return (lem, pos, tok, lem_lst, pos_lst, tok_lst), disambiguation
 
     def transform(
             self,
-            sentence_batch: List[Tuple[List[str], Dict[str, List[str]]]]
+            sentence_batch
     ) -> Tuple[
         Tuple[List[int], List[List], List[List], List[List]],
         List[int]
     ]:
-        # Todo: INVESTIGATE !
         """
         Parameters
         ===========
@@ -169,52 +172,26 @@ class MultiEncoder:
         toke_batch: List[int] = []
         # Expected output
         output_batch: List[int] = []
+        # Triple data input (Lemma, POS, TOK)
+        to_categorize_batch: List[Tuple[int, int, int]] = []
 
-        for sentence, tasks in sentence_batch:
-            # Unlike the original PIE, what we are interested here is:
-            #  - the list of lemma as input
-            #  - characters of the eye word
-            #  - Disambiguation (Dis) task that tells us when something should be used
+        for input_data in sentence_batch:
+            # If we have the disambiguation class
+            (lem, pos, tok, lem_lst, pos_lst, tok_lst), disambiguation = self.regularize_input(input_data)
 
-            # Sentence is the list of token, we technically are not interested in it that much
-            # But we are interested in lemma and POS
+            lemm_batch = self.lemma.transform(lem_lst)
+            pos__batch = self.pos.transform(pos_lst)
+            toke_batch = self.token.transform(tok_lst)
+            char_batch.append(self.char.encode(tok))
 
-            # ToDo: This was dealt with in the Dataset, now we need to check others
-            lem_list = self.lemma.transform(tasks[constants.lemma_task_name])
-            pos_list = self.pos.transform(tasks[constants.pos_task_name])
 
-            for token, disambiguation, lemma in (
-                sentence,
-                tasks[constants.disambiguation_task_name],
-                tasks[constants.lemma_task_name]
-            ):
-                if disambiguation and disambiguation.isnumeric():
-                    lemm_batch.append(lem_list)
-                    char_batch.append(self.char.encode(token))
-                    pos__batch.append(pos_list)
-                    toke_batch.append(self.token.encode(token))
-                    output_batch.append(self.output.encode(self.get_category(lemma, disambiguation)))
+            to_categorize_batch.append((
+                self.lemma.encode(lem),
+                self.pos.encode(pos),
+                self.token.encode(tok)
+            ))
+
+            output_batch.append(self.output.encode(disambiguation))
 
         # Tuple of Input(input_token, context_lemma, context_pos, token_chars), disambiguated
         return (toke_batch, lemm_batch, pos__batch, char_batch), output_batch
-
-
-if __name__ == "__main__":
-    label_encoder = CategoryEncoder()
-
-    assert list(label_encoder.encode_group("a", "b", "c", "a")) == [2, 3, 4, 2], \
-        "'a' should not be re-encoded"
-
-    char_encoder = CharEncoder()
-    assert list(char_encoder.encode("abca")) == [2, 3, 4, 2], \
-        "'a' should not be re-encoded"
-
-    assert list(char_encoder.encode_group("abba", "acab")) == [[2, 3, 3, 2], [2, 4, 2, 3]],\
-        "'a' should not be re-encoded"
-
-    assert char_encoder.decode([2, 3, 3, 2]) == "abba", \
-        "Should decode correctly"
-
-    assert (CharEncoder.load(loads(char_encoder.dumps()))).stoi == char_encoder.stoi, \
-        "Dumping and loading should not create discrepancies"
-
