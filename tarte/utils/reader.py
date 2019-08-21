@@ -35,7 +35,7 @@ class ReaderWrapper(Reader):
         """
         return self.reader.check_tasks(expected=expected)
 
-    def readsents(self, silent=True, only_tokens=False)\
+    def readsents(self, silent=True, only_tokens=False, with_index=False)\
             -> Iterator[Union[
                 InputAnnotation,  # if only_tokens is true
                 Tuple[InputAnnotation, List[str]]
@@ -83,6 +83,8 @@ class ReaderWrapper(Reader):
 
                     if only_tokens:
                         yield tokens
+                    elif with_index:
+                        yield ((filepath, total), (tokens, disambiguation, index))
                     else:
                         yield ((filepath, total), (tokens, disambiguation))
 

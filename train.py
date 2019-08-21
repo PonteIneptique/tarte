@@ -1,65 +1,67 @@
-import logging
-
-from torch.optim import Adam
+import time
+import argparse
+import json
 
 from pie.settings import Settings
 
-
+from tarte.trainer import Trainer
 from tarte.modules.models import TarteModule
 from tarte.utils.labels import MultiEncoder
 from tarte.utils.reader import ReaderWrapper
 from tarte.utils.datasets import Dataset
 
-DefaultSettings = Settings({
-  "max_sent_len": 35,  # max length of sentences (longer sentence will be split)
-  "max_sents": 1000000,  # maximum number of sentences to process
-  "char_max_size": 500,  # maximum vocabulary size for input character embeddings
-  "word_max_size": 20000,  # maximum vocabulary size for input word embeddings
-  "char_min_freq": 1,  # min freq of a character to be part of the vocabulary
-  # (only used if char_max_size is 0)
-  "word_min_freq": 1,  # min freq of a word to be part of the vocabulary
-  # (only used if word_max_size is 0)
-  "header": True,  # tab-format only (by default assume *sv input files have header)
-  "sep": "\t",  # separator for csv-like files
-  # * Task-related config
-  "tasks": [
-      {"name": "lemma"},
-      {"name": "pos"},
-      {"name": "Dis"}
-  ],"buffer_size": 10000,  # maximum number of sentence in memory at any given time
-  "minimize_pad": False,  # preprocess data to have similar sentence lengths inside batch
-  "epochs": 5,  # number of epochs
-  "batch_size": 50,  # batch size
-  "shuffle": False,  # whether to shuffle input batches
-  "lr": 0.00001,
-  "report_freq": 1,
-})
 
+parser = argparse.ArgumentParser()
+parser.add_argument("settings", help="Settings files as json", type=argparse.FileType())
+parser.add_argument("--device", default="cuda", help="Directory where data should be saved", type=str)
+
+# Parse the arguments
+args = parser.parse_args()
+
+
+data = json.load(args.settings)
+data["device"] = args.device
+
+# Make settings
+settings = Settings(data)
+
+# Generate required information
 encoder = MultiEncoder()
-reader = ReaderWrapper(DefaultSettings, "data/tests/test.tsv")
-dataset = Dataset(DefaultSettings, reader, encoder)
 
-encoder.fit_reader(reader)
-print(encoder.lemma.size())
+# Build dataset
+trainset = Dataset(settings, ReaderWrapper(settings, settings["input_path"]), encoder)
+devset = Dataset(settings, ReaderWrapper(settings, settings["dev_path"]), encoder)
+testset = Dataset(settings, ReaderWrapper(settings, settings["test_path"]), encoder)
 
+# Fit the label encoder
+encoder.fit_reader(trainset.reader)
+
+# Configurate model
 model = TarteModule(encoder)
 
-optimizer = Adam(model.parameters(), lr=DefaultSettings.lr)
+model.to(settings.device)
 
+# Create trainer
+trainer = Trainer(settings, model, trainset, trainset.reader.get_nsents())
+
+print("::: Model :::")
+print()
 print(model)
-# One epoch only
-for b, batch in enumerate(dataset.batch_generator()):
-    # get loss
-    loss = model.loss(batch)
+print()
+print("::: Model parameters :::")
+print()
+trainable = sum(p.nelement() for p in model.parameters() if p.requires_grad)
+total = sum(p.nelement() for p in model.parameters())
+print("{}/{} trainable/total".format(trainable, total))
+print()
 
-    if not loss:
-        raise ValueError("Got empty loss, no tasks defined?")
-
-    # optimize
-    optimizer.zero_grad()
-
-    #if self.clip_norm > 0:
-    #    clip_grad_norm_(self.model.parameters(), self.clip_norm)
-    optimizer.step()
-
-print(loss)
+# GO !
+running_time = time.time()
+scores = None
+try:
+    scores = trainer.train_epochs(settings.epochs, devset=devset)
+except KeyboardInterrupt:
+    print("Stopping training")
+finally:
+    model.eval()
+running_time = time.time() - running_time

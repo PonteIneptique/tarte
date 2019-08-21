@@ -1,0 +1,27 @@
+{
+  "max_sent_len": 35,
+ "max_sents": 1000000,
+ "char_max_size": 500,
+ "word_max_size": 20000,
+ "char_min_freq": 1,
+ "word_min_freq": 1,
+ "header": true,
+ "sep": "\t",
+ "breakline_ref": "pos",
+ "breakline_data": ".$",
+ "tasks": [
+   {"name": "lemma"},
+   {"name": "pos"},
+   {"name": "Dis"}
+ ],
+ "buffer_size": 10000,
+ "minimize_pad": false,
+ "epochs": 300,
+ "batch_size": 50,
+ "shuffle": false,
+ "optimizer": "Adam",
+ "lr": 0.0001,
+ "checks_per_epoch": 0,
+ "clip_norm": 5.0,
+ "report_freq": 8
+}

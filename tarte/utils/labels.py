@@ -1,5 +1,6 @@
 from typing import Dict, Union, List, Tuple, Iterator, Iterable
-from json import dumps, loads
+from json import dumps
+from collections import Counter
 
 import pie.data.reader
 
@@ -101,6 +102,12 @@ class OutputEncoder(CategoryEncoder):
         self.stoi: Dict[str, int] = {
             CategoryEncoder.DEFAULT_UNKNOWN: 0
         }
+
+        self.counter: Counter[str] = Counter()
+
+    def encode(self, category: Union[str, Tuple[str, str]]):
+        self.counter[category] += 1
+        return super(OutputEncoder, self).encode(category)
 
     def get_pad(self):
         return -100  # As Nll loss default

@@ -13,7 +13,7 @@ else:
     disambiguation_own_column = []
     default_dis = []
 
-for file in glob.glob("source/*.tsv"):
+for file in glob.glob("ignore_fro/orig/**/*.tab"):
     name = os.path.basename(file)
     with open("tests/"+name, "w") as out:
         writer = csv.writer(out, delimiter="\t")
