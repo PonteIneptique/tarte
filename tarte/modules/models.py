@@ -81,7 +81,7 @@ class TarteModule(Base):
             ),
             kernel_size=3,
         )
-        self.input_encoder = nn.Linear(
+        self.hidden = nn.Linear(
             in_features=self.arguments["wemb_size"] + self.arguments["femb_size"] + self.arguments["pemb_size"],
             out_features=self.context_encoder.channels
         )
@@ -141,17 +141,21 @@ class TarteModule(Base):
         frm = F.dropout(frm, p=self.dropout, training=self.training)
         #chars = F.dropout(chars, p=self.dropout, training=self.training)
 
-        # Tensor(max_sentence_length * batch_size * (lem+pos+frm embedding size))
+        # Tensor(1 * batch_size * max_sentence_length * (lem+pos+frm embedding size))
         encoder_input = torch.cat([lem, pos, frm], dim=-1).unsqueeze(0).transpose(1, 2)
-
         print(encoder_input.size())
 
         # Compute encodings
-        # Tensor(max_sentence_length * batch_size * (2*enc_size))
+        # Tensor(1 * batch_size * 1 * channels)
         context_encoder = self.context_encoder(encoder_input)
+        print(context_encoder.size())
 
+        # Add a dimension to reflect shape of encoder input
+        # Tensor(1 * batch_size * 1 * (lem+pos+frm embedding size))
         cat = torch.cat([le, po, to], dim=-1).unsqueeze(2)
-        input_encoder = self.input_encoder(cat).squeeze()
+
+        # Tensor(1 * batch_size * 1 * channels)
+        input_encoder = self.hidden(cat).squeeze()
 
         # Tensor(batch_size * classes)
         logits = self.decoder(torch.cat([context_encoder, input_encoder], dim=-1))
@@ -186,7 +190,6 @@ class TarteModule(Base):
 
         # Encode
         enc_output = self.enc(final_input)
-        print(enc_output.size())
 
         # Out
         out = self.decoder(final_input)
