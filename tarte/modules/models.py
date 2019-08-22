@@ -22,6 +22,18 @@ from ..utils.labels import MultiEncoder
 from ..utils.datasets import Dataset
 
 
+class TarteScorer(Scorer):
+    def register_batch(self, hyps, targets, tokens):
+        if len(hyps) != len(targets) or len(targets) != len(tokens):
+            raise ValueError("Unequal input lengths. Hyps {}, targets {}, tokens {}"
+                             .format(len(hyps), len(targets), len(tokens)))
+
+        for pred, true, token in zip(hyps, targets, tokens):
+            self.preds.append(pred)
+            self.trues.append(true)
+            self.tokens.append(token)
+
+
 class TarteModule(Base):
     """ See model.SimpleModel """
     DEFAULTS = {
@@ -52,14 +64,14 @@ class TarteModule(Base):
                """
         assert not self.training, "Ooops! Inference in training mode. Call model.eval()"
 
-        #scorers = Scorer(self.label_encoder.output, trainset)
+        scorer = Scorer(self.label_encoder.output, trainset)
 
         with torch.no_grad():
             # Return raw returns both the input and the data but not encoded
             for (inp, tasks), (rinp, rtasks) in tqdm.tqdm(
                     dataset.batch_generator(return_raw=True)):
 
-                preds = self.predict(inp)
+                probs, preds = self.predict(inp)
 
                 # - get input tokens
                 # rinp => [(le, po, to, lemma_list, pos_list, tok_list)]
@@ -68,29 +80,9 @@ class TarteModule(Base):
                     for ((lemma, po, token, lemma_list, pos_list, tok_list), target) in zip(rinp, rtasks)
                 ])
 
-                print(preds)
+                scorer.register_batch(preds, truths, tokens)
 
-                raise Exception
-
-                # - get trues
-                trues = {}
-                le = self.label_encoder.output
-
-                for task in preds:
-                    le = self.label_encoder.tasks[task]
-                    # - transform targets
-                    trues[task] = le.preprocess(
-                        [t for line in rtasks for t in line[le.target]], tokens)
-
-                    # - flatten token level predictions
-                    if le.level == 'token':
-                        preds[task] = [pred for batch in preds[task] for pred in batch]
-
-                # accumulate
-                for task, scorer in scorers.items():
-                    scorer.register_batch(preds[task], trues[task], tokens)
-
-        return scorers
+        return scorer
 
     def get_args_and_kwargs(self):
         """
