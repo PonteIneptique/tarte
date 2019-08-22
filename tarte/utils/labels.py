@@ -21,6 +21,7 @@ class CategoryEncoder:
             CategoryEncoder.DEFAULT_PADDING: 0,
             CategoryEncoder.DEFAULT_UNKNOWN: 1
         }
+        self.fitted = False
 
     def __len__(self):
         return self.size()
@@ -36,7 +37,8 @@ class CategoryEncoder:
         """
         if category in self.stoi:
             return self.stoi[category]
-
+        elif self.fitted:
+            return self.stoi[CategoryEncoder.DEFAULT_UNKNOWN]
         index = len(self.stoi)
         self.stoi[category] = index
         self.itos[index] = category
@@ -81,6 +83,7 @@ class CategoryEncoder:
         obj = cls()
         obj.stoi.update(stoi)
         obj.itos.update({v: k for (k, v) in stoi.items()})
+        obj.fitted = True
         return obj
 
     def dumps(self, as_string=True):
@@ -106,7 +109,8 @@ class OutputEncoder(CategoryEncoder):
         self.counter: Counter[str] = Counter()
 
     def encode(self, category: Union[str, Tuple[str, str]]):
-        self.counter[category] += 1
+        if not self.fitted:
+            self.counter[category] += 1
         return super(OutputEncoder, self).encode(category)
 
     def get_pad(self):
@@ -127,6 +131,7 @@ class OutputEncoder(CategoryEncoder):
             else:
                 obj.stoi[tuple(k)] = v
 
+        obj.fitted = True
         return obj
 
 
@@ -153,6 +158,8 @@ class MultiEncoder:
         self.pos: CategoryEncoder = pos_encoder or CategoryEncoder()
         self.char: CharEncoder = char_encoder or CharEncoder()
 
+        self.fitted = False
+
     def __eq__(self, other):
         return type(self) == type(other) and \
                self.lemma == other.lemma and \
@@ -175,6 +182,7 @@ class MultiEncoder:
             pos_encoder=CategoryEncoder.load(dumped["pos_encoder"]),
             char_encoder=CharEncoder.load(dumped["char_encoder"])
         )
+        obj.fitted = True
         return obj
 
     def dumps(self):
@@ -186,7 +194,7 @@ class MultiEncoder:
             "char_encoder": self.char.dumps(as_string=False)
         })
 
-    def fit(self, lines: Iterator[InputAnnotation]):
+    def fit(self, lines: Iterator[InputAnnotation], freeze=True):
         """ Read all `lines` and fit the vocabulary
         """
         for idx, inp in enumerate(lines):
@@ -199,11 +207,19 @@ class MultiEncoder:
             self.output.encode(disambiguation)
             self.char.encode(tok)
 
-    def fit_reader(self, reader):
+        if freeze:
+            self.fitted = True
+            self.lemma.fitted = True
+            self.pos.fitted = True
+            self.token.fitted = True
+            self.output.fitted = True
+            self.char.fitted = True
+
+    def fit_reader(self, reader, freeze=True):
         """
         fit reader in a non verbose way (to warn about parsing issues)
         """
-        return self.fit(line for (_, line) in reader.readsents(silent=False))
+        return self.fit([line for (_, line) in reader.readsents(silent=False)], freeze=freeze)
 
     def get_category(self, lemma, disambiguation_code) -> Tuple[str, str]:
         return lemma, disambiguation_code

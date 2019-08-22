@@ -87,20 +87,13 @@ class Trainer(trainer.Trainer):
         """
         Evaluate objective on held-out data
         """
-        total_losses, total_batches = collections.defaultdict(float), 0
-
-        # get all tasks
-        tasks = list(self.model.label_encoder.tasks)
+        losses, total_batches = 0., 0
 
         for batch in tqdm.tqdm(dataset.batch_generator()):
             total_batches += 1
-            for k, v in self.model.loss(batch, *tasks).items():
-                total_losses[k] += v.item()
+            losses += self.model.loss(batch).item()
 
-        for k, v in total_losses.items():
-            total_losses[k] = v / total_batches
-
-        return dict(total_losses)
+        return losses / total_batches
 
     def run_check(self, devset):
         """
@@ -117,7 +110,7 @@ class Trainer(trainer.Trainer):
             print()
             print("::: Dev losses :::")
             print()
-            print('\n'.join('{}: {:.3f}'.format(k, v) for k, v in dev_loss.items()))
+            print('Disambiguation: {:.3f}'.format(dev_loss))
             print()
             summary = self.model.evaluate(devset, self.dataset)
             for task in summary.values():

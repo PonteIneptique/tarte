@@ -40,7 +40,7 @@ class Splitter:
         """ Scan data to retrieve information """
         for file, reader in zip(self.files, self.readers):
             logging.info("Reading {} for tokens".format(file))
-            self.encoder.fit_reader(reader)
+            self.encoder.fit_reader(reader, freeze=False)
 
         for file, reader in zip(self.files, self.readers):
             logging.info("Reading {} for number of sentences".format(file))
