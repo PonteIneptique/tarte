@@ -1,12 +1,16 @@
 # Python dependencies
+from typing import List, Tuple
 import copy
+
+import tqdm
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
 # External Packages
 from pie import torch_utils, initialization
-from pie.models import decoder
+from pie.models import decoder, model
+from pie.models import Scorer
 
 # Internal
 from .base import Base
@@ -15,9 +19,11 @@ from .classifier import Classifier
 from .encoder import DataEncoder
 
 from ..utils.labels import MultiEncoder
+from ..utils.datasets import Dataset
 
 
 class TarteModule(Base):
+    """ See model.SimpleModel """
     DEFAULTS = {
         "wemb_size": 100,
         "pemb_size": 10,
@@ -33,6 +39,58 @@ class TarteModule(Base):
         "init": True,
         "device": "cpu"
     }
+
+    def evaluate(self, dataset: Dataset, trainset: Dataset = None, **kwargs):
+        # ToDo: Evaluate, Predict and Scorer
+        """
+               Get scores per task
+
+               dataset: pie.data.Dataset, dataset to evaluate on (your dev or test set)
+               trainset: pie.data.Dataset (optional), if passed scores for unknown and ambiguous
+                   tokens can be computed
+               **kwargs: any other arguments to Model.predict
+               """
+        assert not self.training, "Ooops! Inference in training mode. Call model.eval()"
+
+        #scorers = Scorer(self.label_encoder.output, trainset)
+
+        with torch.no_grad():
+            # Return raw returns both the input and the data but not encoded
+            for (inp, tasks), (rinp, rtasks) in tqdm.tqdm(
+                    dataset.batch_generator(return_raw=True)):
+
+                preds = self.predict(inp)
+
+                # - get input tokens
+                # rinp => [(le, po, to, lemma_list, pos_list, tok_list)]
+                tokens, truths = zip(*[
+                    (token, (lemma, target))
+                    for ((lemma, po, token, lemma_list, pos_list, tok_list), target) in zip(rinp, rtasks)
+                ])
+
+                print(preds)
+
+                raise Exception
+
+                # - get trues
+                trues = {}
+                le = self.label_encoder.output
+
+                for task in preds:
+                    le = self.label_encoder.tasks[task]
+                    # - transform targets
+                    trues[task] = le.preprocess(
+                        [t for line in rtasks for t in line[le.target]], tokens)
+
+                    # - flatten token level predictions
+                    if le.level == 'token':
+                        preds[task] = [pred for batch in preds[task] for pred in batch]
+
+                # accumulate
+                for task, scorer in scorers.items():
+                    scorer.register_batch(preds[task], trues[task], tokens)
+
+        return scorers
 
     def get_args_and_kwargs(self):
         """
@@ -156,40 +214,67 @@ class TarteModule(Base):
         input_encoder = self.hidden(cat).squeeze()
 
         # Tensor(batch_size * classes)
-        logits = self.decoder(torch.cat([context_encoder, input_encoder], dim=-1))
+        reshaped_input = torch.cat([context_encoder, input_encoder], dim=-1)
+        logits = self.decoder(reshaped_input)
 
         return self.decoder.loss(logits, targets)
 
-    def predict(self, token_class, context_lemma, context_pos, token_chars, lengths):
+    def predict(self, batch_data) -> Tuple[
+        List[float], List[Tuple[str, int]]
+    ]:
         """
 
-        :param token_class: Target token to disambiguate
-        :param context_lemma: Context with lemmas
-        :param context_pos: Context with POS
-        :param token_chars: Characters of the form
-        :param lengths: Sentence lengths
+        :param batch_data:
+        :return:
         """
+        (
+            (le, po, to),
+            (token_chars, chars_length),
+            (context_form, form_length),
+            (context_lemma, lemma_length),
+            (context_pos, pos_length)
+        ) = batch_data
+
+        le = self.word_embedding(le).unsqueeze(0)
+        po = self.pos__embedding(po).unsqueeze(0)
+        to = self.form_embedding(to).unsqueeze(0)
+
         # Compute embeddings
         lem = self.word_embedding(context_lemma)
         pos = self.pos__embedding(context_pos)
-        chars, _ = self.char_embedding(token_chars)
+        frm = self.form_embedding(context_form)
+        #chars = self.char_embedding(token_chars)
+
+        # Dropout
+        lem = F.dropout(lem, p=self.dropout, training=self.training)
+        pos = F.dropout(pos, p=self.dropout, training=self.training)
+        frm = F.dropout(frm, p=self.dropout, training=self.training)
+        #chars = F.dropout(chars, p=self.dropout, training=self.training)
+
+        # Tensor(1 * batch_size * max_sentence_length * (lem+pos+frm embedding size))
+        encoder_input = torch.cat([lem, pos, frm], dim=-1).unsqueeze(0).transpose(1, 2)
 
         # Compute encodings
-        w_enc = self.word_enc(lem, lengths)
-        p_enc = self.pos__enc(pos)
+        # Tensor(1 * batch_size * 1 * channels)
+        context_encoder = self.context_encoder(encoder_input)
 
-        # Merge
-        final_input = self.concatenator(
-            target=token_class,
-            w_encoded=w_enc,
-            p_encoded=p_enc,
-            cemb=chars
-        )
+        # Add a dimension to reflect shape of encoder input
+        # Tensor(1 * batch_size * 1 * (lem+pos+frm embedding size))
+        cat = torch.cat([le, po, to], dim=-1).unsqueeze(2)
 
-        # Encode
-        enc_output = self.enc(final_input)
+        # Tensor(1 * batch_size * 1 * channels)
+        input_encoder = self.hidden(cat).squeeze()
 
-        # Out
-        out = self.decoder(final_input)
+        # Tensor(batch_size * classes)
+        reshaped_input = torch.cat([context_encoder, input_encoder], dim=-1)
+        probs = F.softmax(self.decoder(reshaped_input), dim=-1)
+        # Tensor(batch_size * classes)
+        probs, preds = torch.max(probs, dim=-1)
 
-        return out
+        # Probs is Tensor(batch_size) where values are the probability of chosen class
+        # Preds is Tensor(batch_size) where values is the class ID
+
+        output_probs, output_preds = probs.tolist(), list(self.label_encoder.output.inverse_transform(preds.tolist()))
+
+        return output_probs, output_preds
+
