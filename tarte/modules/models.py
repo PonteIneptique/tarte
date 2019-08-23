@@ -78,15 +78,16 @@ class TarteModule(Base):
         to instantiate the model (excluding the label_encoder and tasks)
         """
         return (
-            (self.label_encoder, ),  # Args
+            (),  # Args
             self.arguments  # Kwargs
         )
 
-    def __init__(self, multi_encoder: MultiEncoder, **kwargs):
+    def __init__(self, multi_encoder: MultiEncoder, *args, **kwargs):
         """
 
         :param kwargs:
         """
+        print(args, kwargs)
         super(TarteModule, self).__init__(multi_encoder)
 
         self.arguments = copy.deepcopy(TarteModule.DEFAULTS)

@@ -82,7 +82,7 @@ class CategoryEncoder:
         """
         obj = cls()
         obj.stoi.update(stoi)
-        obj.itos.update({v: k for (k, v) in stoi.items()})
+        obj.itos.update({v: k for (k, v) in obj.stoi.items()})
         obj.fitted = True
         return obj
 
@@ -131,6 +131,7 @@ class OutputEncoder(CategoryEncoder):
             else:
                 obj.stoi[tuple(k)] = v
 
+        obj.itos.update({v: k for (k, v) in obj.stoi.items()})
         obj.fitted = True
         return obj
 
