@@ -56,7 +56,8 @@ class Trainer(trainer.Trainer):
 
         tasks = {
             constants.scheduler_task_name: {
-                "schedule": {"target": True}
+                "schedule": {"target": True},
+                "weight": 1.
             }
         }
 
