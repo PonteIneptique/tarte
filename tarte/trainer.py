@@ -1,9 +1,5 @@
-import os
-import uuid
 import logging
 import time
-import collections
-import random
 
 import tqdm
 
@@ -15,6 +11,9 @@ logging.basicConfig(format='%(asctime)s : %(message)s', level=logging.INFO)
 
 
 import pie.trainer as trainer
+
+from .utils import constants
+
 
 class EarlyStopException(Exception):
     def __init__(self, task, loss, state_dict):
@@ -56,14 +55,14 @@ class Trainer(trainer.Trainer):
             self.check_freq = 0  # no checks
 
         tasks = {
-            "disambiguation": {
+            constants.scheduler_task_name: {
                 "schedule": {"target": True}
             }
         }
 
         self.task_scheduler = trainer.TaskScheduler(
             # task schedule
-            tasks, settings.patience, settings.factor, settings.threshold,
+            tasks, settings.schedule.get("patience", 2), settings.factor, settings.schedule.get("threshold", 0.001),
             settings.min_weight,
             # lr schedule
             optimizer=self.optimizer,
@@ -112,19 +111,14 @@ class Trainer(trainer.Trainer):
             print()
             print('Disambiguation: {:.3f}'.format(dev_loss))
             print()
-            summary = self.model.evaluate(devset, self.dataset)
-            for task in summary.values():
-                task.print_summary()
+            scorer = self.model.evaluate(devset, self.dataset)
+            scorer.print_summary()
 
         self.model.train()
-        dev_scores = {}
-        for task, scorer in summary.items():
-            dev_scores[task] = scorer.get_scores()['all']['accuracy']
-        # add lm scores
-        if 'lm_fwd' in dev_loss or 'lm_bwd' in dev_loss:
-            dev_scores['lm_fwd'] = dev_loss['lm_fwd']
-            dev_scores['lm_bwd'] = dev_loss['lm_bwd']
 
+        dev_scores = {
+            constants.scheduler_task_name: scorer.get_scores()['all']['accuracy']
+        }
         self.task_scheduler.step(dev_scores, self.model)
 
         if self.verbose:

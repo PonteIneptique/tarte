@@ -8,30 +8,18 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # External Packages
-from pie import torch_utils, initialization
-from pie.models import decoder, model
-from pie.models import Scorer
+from pie import initialization
+from pie.models import decoder
 
 # Internal
 from .base import Base
-from .embeddings import WordEmbedding, CharEmbedding
+from .embeddings import WordEmbedding
 from .classifier import Classifier
 from .encoder import DataEncoder
 
 from ..utils.labels import MultiEncoder
 from ..utils.datasets import Dataset
-
-
-class TarteScorer(Scorer):
-    def register_batch(self, hyps, targets, tokens):
-        if len(hyps) != len(targets) or len(targets) != len(tokens):
-            raise ValueError("Unequal input lengths. Hyps {}, targets {}, tokens {}"
-                             .format(len(hyps), len(targets), len(tokens)))
-
-        for pred, true, token in zip(hyps, targets, tokens):
-            self.preds.append(pred)
-            self.trues.append(true)
-            self.tokens.append(token)
+from .scorer import TarteScorer
 
 
 class TarteModule(Base):
@@ -64,7 +52,7 @@ class TarteModule(Base):
                """
         assert not self.training, "Ooops! Inference in training mode. Call model.eval()"
 
-        scorer = Scorer(self.label_encoder.output, trainset)
+        scorer = TarteScorer(self.label_encoder, trainset)
 
         with torch.no_grad():
             # Return raw returns both the input and the data but not encoded

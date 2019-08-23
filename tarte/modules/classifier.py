@@ -41,6 +41,7 @@ class Classifier(nn.Module):
 
         return loss
 
+
 class _Classifier(LinearDecoder):
     def __init__(
             self,output_encoder: CategoryEncoder,

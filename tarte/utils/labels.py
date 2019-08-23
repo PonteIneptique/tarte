@@ -152,6 +152,7 @@ class MultiEncoder:
             pos_encoder: CategoryEncoder = None,
             char_encoder: CharEncoder = None
     ):
+        self.name: str = "Disambiguation"  # Faked for Scorer.print_summary
         self.lemma: CategoryEncoder = lemma_encoder or CategoryEncoder()
         self.token: CategoryEncoder = token_encoder or CategoryEncoder()
         self.output: OutputEncoder = output_encoder or OutputEncoder()
@@ -159,6 +160,7 @@ class MultiEncoder:
         self.char: CharEncoder = char_encoder or CharEncoder()
 
         self.fitted = False
+        self._known_tokens = None
 
     def __eq__(self, other):
         return type(self) == type(other) and \
@@ -167,6 +169,15 @@ class MultiEncoder:
                self.output == other.output and \
                self.pos == other.pos and \
                self.char == other.char
+
+    @property
+    def known_tokens(self):
+        if self.fitted:
+            if self._known_tokens:
+                return self._known_tokens
+            else:
+                self._known_tokens = list(self.token.stoi.keys())
+        return list(self.token.stoi.keys())
 
     @classmethod
     def load(cls, dumped: Dict[str, Dict[str, int]]) -> "MultiEncoder":
