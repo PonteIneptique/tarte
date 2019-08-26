@@ -25,7 +25,7 @@ class Tagger:
         self.model.to(device)
         self.device = device
 
-    def sentence_to_batch(self, word, lemma, pos, sentence):
+    def sentence_to_batch_row(self, word, lemma, pos, sentence):
         """
         (le, po, to),
         (token_chars, chars_length),
@@ -38,9 +38,7 @@ class Tagger:
         """
         tok_lst, lem_lst, pos_lst, *_ = zip(*sentence)
 
-        return [
-            (lemma, pos, word, lem_lst, pos_lst, tok_lst)
-        ]
+        return (lemma, pos, word, lem_lst, pos_lst, tok_lst)
 
     @staticmethod
     def formatter(lemma, index):
@@ -70,11 +68,11 @@ class Tagger:
             out = []
             for (word, lemma, pos, *_) in sentence:
                 if lemma in self.output_encoder.need_categorization:
-                    (l, p, w, lem_lst, pos_lst, tok_lst) = self.sentence_to_batch(word, lemma, pos, sentence)
+                    (l, p, w, lem_lst, pos_lst, tok_lst) = self.sentence_to_batch_row(word, lemma, pos, sentence)
                     prob, (prediction, *_) = self.model.predict(
                         Dataset._pack_batch(
                             self.label_encoder,
-                            (l, p, w, lem_lst, pos_lst, tok_lst),
+                            [(l, p, w, lem_lst, pos_lst, tok_lst)],
                             with_target=False,
                             device=self.device
                         )
@@ -98,7 +96,7 @@ class Tagger:
 
 
 if __name__ == "__main__":
-    tagger = Tagger("/home/thibault/dev/tart/latest-fro--2019_08_23-15_27_22.tar")
+    tagger = Tagger("/home/thibault/dev/tart/fro-full--2019_08_26-12_05_32.tar")
     for sentence in tagger.tag([[
         ["o", "o", "CONcoo", "MORPH=empt"],
         ["mescreant", "mescroire", "VERppa", "NOMB.=p|GENRE=m|CAS="],
