@@ -1,4 +1,5 @@
 from typing import List, Tuple
+import logging
 
 from tarte.modules.models import TarteModule
 from tarte.utils.datasets import Dataset
@@ -8,11 +9,21 @@ Sentence = List
 WordAnnotations = List
 
 
+logging.basicConfig(format='%(asctime)s : %(message)s', level=logging.INFO)
+
+
 class Tagger:
-    def __init__(self, filepath):
+    def __init__(self, filepath, device="cpu"):
         self.model: TarteModule = TarteModule.load(filepath)
         self.label_encoder = self.model.label_encoder
         self.output_encoder = self.label_encoder.output
+
+        self.device = None
+        self.use_device(device)
+
+    def use_device(self, device):
+        self.model.to(device)
+        self.device = device
 
     def sentence_to_batch(self, word, lemma, pos, sentence):
         """
@@ -59,14 +70,28 @@ class Tagger:
             out = []
             for (word, lemma, pos, *_) in sentence:
                 if lemma in self.output_encoder.need_categorization:
+                    (l, p, w, lem_lst, pos_lst, tok_lst) = self.sentence_to_batch(word, lemma, pos, sentence)
                     prob, (prediction, *_) = self.model.predict(
                         Dataset._pack_batch(
                             self.label_encoder,
-                            self.sentence_to_batch(word, lemma, pos, sentence),
-                            with_target=False
+                            (l, p, w, lem_lst, pos_lst, tok_lst),
+                            with_target=False,
+                            device=self.device
                         )
                     )
-                    out.append(formatter(*prediction))
+                    if isinstance(prediction, tuple):
+                        if prediction[0] != lemma:  # If somehow, the predicted category is unrelated to the lemma
+                            out.append(lemma)  # we keep the uncategorized one
+
+                            logging.info("<> was predicted for <> in the sentence <{}>;<{}>;<{}>".format(
+                                formatter(*prediction), lemma,
+                                tok_lst, lem_lst, pos_lst
+                            ))
+                        else:
+                            out.append(formatter(*prediction))
+                    else:
+                        out.append(lemma)  # If UNKNOWN, we keep the predicted one
+
                 else:
                     out.append(lemma)
             yield out

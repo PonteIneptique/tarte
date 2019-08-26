@@ -1,4 +1,4 @@
-from typing import Iterator
+from typing import Iterator, Dict, Tuple, Set
 from collections import defaultdict
 import logging
 import csv
@@ -7,6 +7,7 @@ import random
 import os
 import os.path
 
+from terminaltables import GithubFlavoredMarkdownTable
 from pie.settings import Settings
 
 from tarte.utils.datasets import Dataset
@@ -36,7 +37,7 @@ class Splitter:
         self.n_sents = 0
         self.fitted = False
 
-    def scan(self):
+    def scan(self, table=False):
         """ Scan data to retrieve information """
         for file, reader in zip(self.files, self.readers):
             logging.info("Reading {} for tokens".format(file))
@@ -47,16 +48,47 @@ class Splitter:
             self.n_sents += reader.get_nsents()
 
         logging.info("Found {:,} kind of tokens to disambiguate over {:,} sentences".format(
-            self.encoder.output.size(), self.n_sents
+            self.encoder.output.size() - 1, self.n_sents # Remove unknown
         ))
 
         logging.info("{:,} have more than one entry".format(
-            len([x for x in self.encoder.output.counter.values() if x > 1]), self.n_sents
+            len([x for x in self.encoder.output.counter.values() if x > 1])
         ))
         logging.info("{:,} have more than 2 entries".format(
-            len([x for x in self.encoder.output.counter.values() if x > 2]), self.n_sents
+            len([x for x in self.encoder.output.counter.values() if x > 2])
         ))
+        dispatched = defaultdict(set)
+        for key in self.encoder.output.stoi:
+            if not isinstance(key, str):  # Remove UNK
+                lemma, index = key
+                dispatched[lemma].add(index)
+
+        logging.info("{:,} lemma have only one disambiguation possible, is it really useful ?".format(
+            len([1 for set_of_index in dispatched.values() if len(set_of_index) == 1])
+        ))
+
         self.fitted = True
+
+        if table:
+            self.make_table(table, counter=self.encoder.output.counter, keys=dispatched)
+
+    def make_table(self, filepath: str, counter: Dict[Tuple[str, str], int], keys: Dict[str, Set[str]]):
+        header = [
+            ["Lemma", "Categories(Occurrences)"]
+        ]
+        data = [
+            [lemma, ", ".join([
+                "{}({})".format(index, counter[(lemma, index)])
+                for index in sorted(set_of_index, key=lambda index: counter[(lemma, index)])[::-1]
+            ])]
+            for lemma, set_of_index in keys.items()
+        ]
+        data = sorted(data,
+                      key=lambda elem: "{categories:02d}{lemma}".format(categories=elem[1].count(","), lemma=elem[0]))
+        table = GithubFlavoredMarkdownTable(header + data)
+        print(table.table)
+        with open(filepath, "w") as f:
+            f.write(table.table)
 
     def write(self, file, values, header=["token", "pos", "lemma", "Dis"]):
         i = 0
