@@ -1,4 +1,4 @@
-from typing import Dict, Union, List, Tuple, Iterator, Iterable
+from typing import Dict, Union, List, Tuple, Iterator, Iterable, Set
 from json import dumps
 from collections import Counter
 
@@ -28,6 +28,7 @@ class CategoryEncoder:
 
     def size(self):
         return len(self.itos)
+
 
     def encode(self, category: Union[str, Tuple[str, str]]) -> int:
         """ Record a token as a category
@@ -107,6 +108,15 @@ class OutputEncoder(CategoryEncoder):
         }
 
         self.counter: Counter[str] = Counter()
+        self._need_categorization: Set[str] = None
+
+    @property
+    def need_categorization(self) -> Set[str]:
+        if self.fitted:
+            if not self._need_categorization:
+                self._need_categorization = set([key[0] for key in self.stoi if isinstance(key, tuple)])
+            return self._need_categorization
+        raise Exception("Vocabulary not fitted ATM")
 
     def encode(self, category: Union[str, Tuple[str, str]]):
         if not self.fitted:
@@ -299,8 +309,8 @@ class MultiEncoder:
                 self.pos.encode(pos),
                 self.token.encode(tok)
             ))
-
-            output_batch.append(self.output.encode(disambiguation))
+            if disambiguation:
+                output_batch.append(self.output.encode(disambiguation))
 
         # Tuple of Input(input_token, context_lemma, context_pos, token_chars), disambiguated
         return (to_categorize_batch, char_batch, toke_batch, lemm_batch, pos__batch), output_batch

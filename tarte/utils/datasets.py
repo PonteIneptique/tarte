@@ -25,31 +25,32 @@ class Dataset(pie.data.dataset.Dataset):
         :param device: Devide where we should put stuff
         :return:
         """
-        return pack_batch(self.label_encoder, batch, device or self.device)
+        return self._pack_batch(self.label_encoder, batch, device or self.device)
 
     @staticmethod
     def get_nelement(batch):
         return len(batch[1])
 
+    @staticmethod
+    def _pack_batch(label_encoder: MultiEncoder, batch, device=None, with_target=True):
+        """ Transform batch data to tensors
 
-def pack_batch(label_encoder: MultiEncoder, batch, device=None):
-    """ Transform batch data to tensors
+        Chars, forms, lemma, pos batches are:
+            Tuple(Tensor(max_len, batch_size), Tensor(batch_size))
+        To_categorize are
+            Tensor(3, batch_size) where 3 is (lem,pos,tok)
+        """
+        (to_categorize, chars, forms, lemma, pos), output_batch = label_encoder.transform(batch)
+        forms = torch_utils.pad_batch(forms, label_encoder.token.get_pad(), device=device)
+        lemma = torch_utils.pad_batch(lemma, label_encoder.lemma.get_pad(), device=device)
+        pos = torch_utils.pad_batch(pos, label_encoder.pos.get_pad(), device=device)
+        chars = torch_utils.pad_batch(chars, label_encoder.char.get_pad(), device=device)
 
-    Chars, forms, lemma, pos batches are:
-        Tuple(Tensor(max_len, batch_size), Tensor(batch_size))
-    To_categorize are
-        Tensor(3, batch_size) where 3 is (lem,pos,tok)
-    """
-    (to_categorize, chars, forms, lemma, pos), output_batch = label_encoder.transform(batch)
-
-    forms = torch_utils.pad_batch(forms, label_encoder.token.get_pad(), device=device)
-    lemma = torch_utils.pad_batch(lemma, label_encoder.lemma.get_pad(), device=device)
-    pos = torch_utils.pad_batch(pos, label_encoder.pos.get_pad(), device=device)
-    chars = torch_utils.pad_batch(chars, label_encoder.char.get_pad(), device=device)
-
-    triple = tuple([
-        torch.tensor(cat, dtype=torch.int64, device=device)
-        for cat in zip(*to_categorize)
-    ])
-    # Triple is each thing encoded apart
-    return (triple, chars, forms, lemma, pos), torch.tensor(output_batch, dtype=torch.int64, device=device)
+        triple = tuple([
+            torch.tensor(cat, dtype=torch.int64, device=device)
+            for cat in zip(*to_categorize)
+        ])
+        if not with_target:
+            return triple, chars, forms, lemma, pos
+        # Triple is each thing encoded apart
+        return (triple, chars, forms, lemma, pos), torch.tensor(output_batch, dtype=torch.int64, device=device)

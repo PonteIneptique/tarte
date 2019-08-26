@@ -192,7 +192,7 @@ class TarteModule(Base):
         cat = torch.cat([le, po, to], dim=-1).unsqueeze(2)
 
         # Tensor(1 * batch_size * 1 * channels)
-        input_encoder = self.hidden(cat).squeeze()
+        input_encoder = self.hidden(cat).squeeze(dim=2).squeeze(dim=0)
 
         # Tensor(batch_size * classes)
         reshaped_input = torch.cat([context_encoder, input_encoder], dim=-1)
@@ -216,6 +216,7 @@ class TarteModule(Base):
             (context_pos, pos_length)
         ) = batch_data
 
+        _, batch_size = context_lemma.size()
         le = self.word_embedding(le).unsqueeze(0)
         po = self.pos__embedding(po).unsqueeze(0)
         to = self.form_embedding(to).unsqueeze(0)
@@ -243,8 +244,9 @@ class TarteModule(Base):
         # Tensor(1 * batch_size * 1 * (lem+pos+frm embedding size))
         cat = torch.cat([le, po, to], dim=-1).unsqueeze(2)
 
+        # .squeeze() remove all 1 dimension, if a batch is one sized, we need to squeeze only what is needed
         # Tensor(1 * batch_size * 1 * channels)
-        input_encoder = self.hidden(cat).squeeze()
+        input_encoder = self.hidden(cat).squeeze(dim=2).squeeze(dim=0)
 
         # Tensor(batch_size * classes)
         reshaped_input = torch.cat([context_encoder, input_encoder], dim=-1)
@@ -259,3 +261,6 @@ class TarteModule(Base):
 
         return output_probs, output_preds
 
+
+class GensimModel(Base):
+    """ Using only w2vec (unsupervised) """
