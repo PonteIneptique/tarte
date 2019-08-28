@@ -96,15 +96,16 @@ class TarteScorer(Scorer):
             output['ambiguous-tokens'] = self.compute_scores(amb_trues, amb_preds)
 
         # compute scores for unknown targets
-        if self.label_encoder.known_tokens:
-            # token-level encoding doesn't have unknown targets (only OOV)
-            unk_trues, unk_preds = [], []
-            for true, pred in zip(self.trues, self.preds):
-                if true not in self.label_encoder.known_tokens:
-                    unk_trues.append(true)
-                    unk_preds.append(pred)
-            support = len(unk_trues)
-            if support > 0:
-                output['unknown-targets'] = self.compute_scores(unk_trues, unk_preds)
+        # There is a slow down here
+        #if self.label_encoder.known_tokens:
+        #    # token-level encoding doesn't have unknown targets (only OOV)
+        #    unk_trues, unk_preds = [], []
+        #    for true, pred in zip(self.trues, self.preds):
+        #        if true not in self.label_encoder.known_tokens:
+        #            unk_trues.append(true)
+        #            unk_preds.append(pred)
+        #    support = len(unk_trues)
+        #    if support > 0:
+        #        output['unknown-targets'] = self.compute_scores(unk_trues, unk_preds)
 
         return output

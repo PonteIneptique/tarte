@@ -86,7 +86,7 @@ class Splitter:
         data = sorted(data,
                       key=lambda elem: "{categories:02d}{lemma}".format(categories=elem[1].count(","), lemma=elem[0]))
         table = GithubFlavoredMarkdownTable(header + data)
-        print(table.table)
+
         with open(filepath, "w") as f:
             f.write(table.table)
 

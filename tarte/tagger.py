@@ -67,7 +67,10 @@ class Tagger:
         for sentence in rows:
             out = []
             for (word, lemma, pos, *_) in sentence:
-                if lemma in self.output_encoder.need_categorization:
+
+                if lemma in self.output_encoder.auto_categorization:
+                    out.append(formatter(lemma, self.output_encoder.auto_categorization[lemma]))
+                elif lemma in self.output_encoder.need_categorization:
                     (l, p, w, lem_lst, pos_lst, tok_lst) = self.sentence_to_batch_row(word, lemma, pos, sentence)
                     prob, (prediction, *_) = self.model.predict(
                         Dataset._pack_batch(
@@ -79,7 +82,7 @@ class Tagger:
                     )
                     if isinstance(prediction, tuple):
                         if prediction[0] != lemma:  # If somehow, the predicted category is unrelated to the lemma
-                            out.append(lemma)  # we keep the uncategorized one
+                            out.append(formatter(lemma, "?"))  # we keep the uncategorized one
 
                             logging.info("<> was predicted for <> in the sentence <{}>;<{}>;<{}>".format(
                                 formatter(*prediction), lemma,

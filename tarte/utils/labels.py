@@ -1,6 +1,6 @@
 from typing import Dict, Union, List, Tuple, Iterator, Iterable, Set
 from json import dumps
-from collections import Counter
+from collections import Counter, defaultdict
 
 import pie.data.reader
 
@@ -28,7 +28,6 @@ class CategoryEncoder:
 
     def size(self):
         return len(self.itos)
-
 
     def encode(self, category: Union[str, Tuple[str, str]]) -> int:
         """ Record a token as a category
@@ -109,6 +108,7 @@ class OutputEncoder(CategoryEncoder):
 
         self.counter: Counter[str] = Counter()
         self._need_categorization: Set[str] = None
+        self._auto_categorization: Dict[str, Tuple[str, str]] = None
 
     @property
     def need_categorization(self) -> Set[str]:
@@ -116,6 +116,22 @@ class OutputEncoder(CategoryEncoder):
             if not self._need_categorization:
                 self._need_categorization = set([key[0] for key in self.stoi if isinstance(key, tuple)])
             return self._need_categorization
+        raise Exception("Vocabulary not fitted ATM")
+
+    @property
+    def auto_categorization(self) -> Dict[str, str]:
+        if self.fitted:
+            if not self._auto_categorization:
+                a = defaultdict(set)
+                for token in self.stoi:
+                    if isinstance(token, tuple):
+                        a[token[0]].add(token[1])
+                self._auto_categorization = {
+                    key: value[0]
+                    for key, value in a.items()
+                    if len(value) == 1
+                }
+            return self._auto_categorization
         raise Exception("Vocabulary not fitted ATM")
 
     def encode(self, category: Union[str, Tuple[str, str]]):

@@ -14,7 +14,7 @@ from setuptools import find_packages, setup, Command
 here = os.path.abspath(os.path.dirname(__file__))
 
 # Package meta-data.
-NAME = 'nlp-tarte'
+NAME = 'nlp_tarte'
 DESCRIPTION = 'A framework for disambiguation'
 URL = 'https://github.com/ponteineptique/tarte'
 AUTHOR = 'Thibault Clérice'
