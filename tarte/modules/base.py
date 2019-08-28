@@ -50,7 +50,7 @@ class Base(nn.Module):
 
         # create dir if necessary
         dirname = os.path.dirname(fpath)
-        if not os.path.isdir(dirname):
+        if dirname and not os.path.isdir(dirname):
             os.makedirs(dirname)
 
         with tarfile.open(fpath, 'w') as tar:

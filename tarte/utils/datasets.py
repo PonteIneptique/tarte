@@ -18,14 +18,14 @@ class Dataset(pie.data.dataset.Dataset):
     ):
         super(Dataset, self).__init__(settings=settings, reader=reader, label_encoder=multiencoder)
 
-    def pack_batch(self, batch, device=None):
+    def pack_batch(self, batch, device=None, **kwargs):
         """ Finish up the batch
 
         :param batch: Raw data (not encoded ?)
         :param device: Devide where we should put stuff
         :return:
         """
-        return self._pack_batch(self.label_encoder, batch, device or self.device)
+        return self._pack_batch(self.label_encoder, batch, device or self.device, **kwargs)
 
     @staticmethod
     def get_nelement(batch):

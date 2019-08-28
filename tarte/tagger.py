@@ -13,6 +13,7 @@ logging.basicConfig(format='%(asctime)s : %(message)s', level=logging.INFO)
 
 
 class Tagger:
+    DatasetClass = Dataset
     def __init__(self, filepath, device="cpu"):
         self.model: TarteModule = TarteModule.load(filepath)
         self.label_encoder = self.model.label_encoder
@@ -44,6 +45,14 @@ class Tagger:
     def formatter(lemma, index):
         return lemma+index
 
+    def pack_batch(self, l, p, w, lem_lst, pos_lst, tok_lst):
+        return type(self).DatasetClass._pack_batch(
+            self.label_encoder,
+            [(l, p, w, lem_lst, pos_lst, tok_lst)],
+            with_target=False,
+            device=self.device
+        )
+
     def tag(self, rows: SentenceList[Sentence[WordAnnotations[str]]], formatter=None):
         """
 
@@ -70,12 +79,7 @@ class Tagger:
                 if lemma in self.output_encoder.need_categorization:
                     (l, p, w, lem_lst, pos_lst, tok_lst) = self.sentence_to_batch_row(word, lemma, pos, sentence)
                     prob, (prediction, *_) = self.model.predict(
-                        Dataset._pack_batch(
-                            self.label_encoder,
-                            [(l, p, w, lem_lst, pos_lst, tok_lst)],
-                            with_target=False,
-                            device=self.device
-                        )
+                        self.pack_batch(l, p, w, lem_lst, pos_lst, tok_lst)
                     )
                     if isinstance(prediction, tuple):
                         if prediction[0] != lemma:  # If somehow, the predicted category is unrelated to the lemma
