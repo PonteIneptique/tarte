@@ -123,11 +123,13 @@ class OutputEncoder(CategoryEncoder):
         if self.fitted:
             if not self._auto_categorization:
                 a = defaultdict(set)
+
                 for token in self.stoi:
                     if isinstance(token, tuple):
                         a[token[0]].add(token[1])
+
                 self._auto_categorization = {
-                    key: value[0]
+                    key: list(value)[0]
                     for key, value in a.items()
                     if len(value) == 1
                 }
