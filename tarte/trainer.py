@@ -15,7 +15,7 @@ import pie.trainer as trainer
 from .utils import constants
 
 
-class EarlyStopException(Exception):
+class EarlyStopException(trainer.EarlyStopException):
     def __init__(self, task, loss, state_dict):
         self.task = task
         self.loss = loss
@@ -56,7 +56,7 @@ class Trainer(trainer.Trainer):
 
         tasks = {
             constants.scheduler_task_name: {
-                "schedule": {"target": True},
+                "target": True,
                 "weight": 1.
             }
         }
@@ -186,12 +186,12 @@ class Trainer(trainer.Trainer):
                 logging.info("Finished epoch [{}] in [{:g}] secs".format(
                     epoch, epoch_total))
 
-        except EarlyStopException as e:
+        except trainer.EarlyStopException as e:
             logging.info("Early stopping training: "
                          "task [{}] with best score {:.5f}".format(e.task, e.loss))
 
             self.model.load_state_dict(e.best_state_dict)
-            scores = {e.task: e.loss}
+            scores = e.loss
 
         logging.info("Finished training in [{:g}]".format(time.time() - start))
 

@@ -16,10 +16,10 @@ from .base import Base
 from .embeddings import WordEmbedding
 from .classifier import Classifier
 from .encoder import DataEncoder
+from .scorer import TarteScorer
 
 from ..utils.labels import MultiEncoder
 from ..utils.datasets import Dataset
-from .scorer import TarteScorer
 
 
 class TarteModule(Base):
@@ -87,7 +87,6 @@ class TarteModule(Base):
 
         :param kwargs:
         """
-        print(args, kwargs)
         super(TarteModule, self).__init__(multi_encoder)
 
         self.arguments = copy.deepcopy(TarteModule.DEFAULTS)
@@ -261,6 +260,3 @@ class TarteModule(Base):
 
         return output_probs, output_preds
 
-
-class GensimModel(Base):
-    """ Using only w2vec (unsupervised) """
